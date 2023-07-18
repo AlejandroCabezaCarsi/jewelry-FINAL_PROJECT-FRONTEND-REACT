@@ -1,0 +1,23 @@
+.changeViewButtonDesign{
+
+    height: 2em;
+    width: 4em;
+    background-color: black;
+    border-radius: 0.4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: 0.7s;
+
+
+}
+
+.changeViewButtonDesign:hover{
+    background-color: rgb(212, 175, 55);
+    transition: 0.7s;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: black;
+}
+

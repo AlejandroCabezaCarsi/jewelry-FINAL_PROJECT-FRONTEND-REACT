@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./Header.css";
+import { ChangeViewButton } from "../ChangeViewButton/ChangeViewButton";
 
 export const Header = () => {
   return (
@@ -29,7 +30,7 @@ export const Header = () => {
                     <Nav>
 
                         <div className="navLinksRight">
-                            <div className="PRUEBA p-3">HOLA</div>
+                            <div className="PRUEBA p-3"><ChangeViewButton name={"Login"} path={"/Login"} /></div>
                             <div className="PRUEBA p-3">HOLA</div>
                         </div>
                     </Nav>
