@@ -1,0 +1,24 @@
+/* Importa la fuente elegante desde una CDN o un archivo local */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+
+.ChangeViewButtonUserLateralNavbar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Urbanist', sans-serif; /* Utiliza la fuente 'Roboto' o la que desees */
+    font-weight: 400; /* Puedes ajustar el peso de la fuente según lo necesites */
+    font-size: 1em; /* Puedes ajustar el tamaño de la fuente según lo necesites */
+    color: black; /* Establece el color del texto a blanco o cualquier otro color claro */
+    border: none;
+    border-radius: 5px; /* Puedes ajustar el radio del borde según lo necesites */
+    cursor: pointer;
+    transition: 0.3s ease; /* Agrega una transición suave al cambiar el color de fondo */
+    margin-top: 0.5em;
+    /* Agrega estilos adicionales si es necesario */
+}
+
+.ChangeViewButtonUserLateralNavbar:hover {
+    color: #b5b5b5; /* Cambia el color de fondo al pasar el cursor sobre el botón */
+}
