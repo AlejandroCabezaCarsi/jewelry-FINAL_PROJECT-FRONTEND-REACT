@@ -4,8 +4,11 @@ import { InputText } from "../../common/InputText/InputText";
 import { Container, Row, Col } from "react-bootstrap";
 import { checkError } from "../../services/useful";
 import { register } from "../../services/apicalls";
+import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
+
+    const navigate = useNavigate()
 
     const [credentials, setCredentials] = useState({
         name:"",
@@ -40,11 +43,23 @@ export const Register = () => {
       ...prevState,
       [e.target.name + "Error"]: mensajeError,
     }));
-  };    
+  };
 
-  const registerMe = () =>{
-    register(credentials)
-  }
+  const [errorMessage, setErrorMessage] = useState("");   
+
+  const registerMe = async () => {
+    try {
+      const response = await register(credentials);
+
+      if (response.status === 201) {
+       navigate("/")
+      } else {
+        setErrorMessage("Hubo un error en el registro. Inténtalo de nuevo más tarde.");
+      }
+    } catch (error) {
+      setErrorMessage("Hubo un problema en el servidor. Inténtalo de nuevo más tarde.");
+    }
+  };
 
 
     return(
@@ -55,7 +70,16 @@ export const Register = () => {
 
             <div className="registerFormDesign">
 
+              <Row>
+                <Col className="text-center mb-3 mt-4">
+                  <div className="registerTitle">
+                    REGISTER
+                  </div>
+                </Col>
+              </Row>
+
             <Row className="d-flex flex-row ">
+          
 
               <Col  
                 xs={12}
@@ -216,12 +240,21 @@ export const Register = () => {
                 md={12}
                 lg={6}
                 xl={6}
-                className="d-flex justify-content-center"
+                className="d-flex flex-column align-items-center"
               >
               
-              <div onClick={() => registerMe()} className="registerButton">
-                      Register
-                    </div>
+              <div
+                onClick={credentialsError.emailError || credentialsError.passwordError ? null : registerMe}
+                className={`registerButton ${credentialsError.emailError || credentialsError.passwordError ? 'inactiveButton' : ''}`}
+              >
+                Register
+              </div>
+              {credentialsError.emailError || credentialsError.passwordError ? (
+            <div className="registerErrorMessage">
+              Todos los campos deben estar rellenados correctamente.
+            </div>
+          ) : null}
+          {errorMessage && <div className="errorText">{errorMessage}</div>}
                 
                 </Col>
                 
