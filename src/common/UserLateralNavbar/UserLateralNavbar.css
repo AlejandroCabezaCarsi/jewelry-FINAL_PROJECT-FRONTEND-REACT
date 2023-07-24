@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
 
 .userLateralNavbarDesign{
-    width: 20vw;
+    width: 19.8vw;
     height: 70vh;
     border-radius: 0.4em;
-    border: solid black 0.1em;
     display: flex;
+    overflow-y: auto;
+    box-sizing: border-box;
+    background-color: grey;
     
 }
 
@@ -25,6 +27,7 @@
     align-items: center;
     justify-content: space-around;
     cursor: pointer;
+    
 }
 
 .logoutText{
@@ -40,6 +43,26 @@
     background-size: contain;
 }
 
+@media screen and (max-width: 576px) {
+    .logout {
+        margin-top: auto;
+        width: 100%;
+        height: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-around;
+        cursor: pointer;
+        margin-bottom: 0.5em;
+    }
+    
+    .logoutText{
+        width: auto;
+        height: 1em;
+        font-family: 'Urbanist';
+        font-size: 0.8em;
+    }
+}
 
 
 

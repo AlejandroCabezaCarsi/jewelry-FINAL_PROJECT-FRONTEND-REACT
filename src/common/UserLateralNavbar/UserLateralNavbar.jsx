@@ -18,7 +18,7 @@ export const UserLateralNavbar = () => {
     const role_ID= dataUser.dataUser.role
 
     console.log(role_ID)
-    
+
     useEffect(() => {
         if (role_ID === "" || role_ID < 1 || role_ID > 4) {
             navigate("/");
@@ -41,23 +41,83 @@ export const UserLateralNavbar = () => {
         <div className="userLateralNavbarDesign">
 
                 {role_ID === 1 ? (
-                    <div className="userLateralNavbarDesign">
-
                     
+                    <div className="userLateralNavbarDesign">                       
+                    {
+                        <Container className="d-flex justify-content-center">
+                            <Row >
+                                <Col sm={12} md={12}  lg={12} xl={12} className="d-flex flex-column align-items-center text-center mt-2">   
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Ver pedidos"} />
+                                    <div className="space"></div>
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Editar mi contraseña"} />
+                                    <div className="space"></div>
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Lista de usuarios"} />
+                                    <div className="space"></div>
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Lista de trabajadores"} />
+                                    <div className="space"></div>
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Lista de administradores"} />
+                                    <div className="space"></div>
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Crear producto"} />
+                                    <div className="space"></div>
+
+                                    <div className="logout" onClick={()=>{handleLogout()}}>
+                                        <p className="logoutText">Logout</p>
+                                        <div className="logoutImg"></div>
+                                    </div>
+                                </Col>
+                            </Row>   
+                        </Container>
+                    }
                     </div>
+
                   ) : role_ID === 2 ? (
-                      // Contenido para el role_ID igual a 2 (Rol 2)
-                      <div className="userLateralNavbarDesign">
-                    {/* Agrega aquí los elementos específicos para el Rol 2 */}
+                    <div className="userLateralNavbarDesign">                       
+                    {
+                        <Container className="d-flex justify-content-center">
+                            <Row >
+                                <Col sm={12} md={12}  lg={12} xl={12} className="d-flex flex-column align-items-center text-center mt-2">   
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Ver pedidos"} />
+                                    <div className="space"></div>
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Editar mi contraseña"} />
+                                    <div className="space"></div>
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Lista de usuarios"} />
+                                    <div className="space"></div>
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Lista de trabajadores"} />
+                                    <div className="space"></div>
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Crear producto"} />
+                                    <div className="space"></div>
+                                    <div className="logout d-flex aling-items-center justify-content-center" onClick={()=>{handleLogout()}}>
+                                        <p className="logoutText">Logout</p>
+                                        <div className="logoutImg"></div>
+                                    </div>
+                                </Col>
+                            </Row>   
+                        </Container>
+                    }
                     </div>
                   ) : role_ID === 3 ? (
-                      // Contenido para el role_ID igual a 3 (Rol 3)
-                      <div className="userLateralNavbarDesign">
-                    {/* Agrega aquí los elementos específicos para el Rol 3 */}
+                    <div className="userLateralNavbarDesign">
+                        
+                    {
+                        <Container className="d-flex justify-content-center">
+                            <Row >
+                                <Col sm={12} md={12}  lg={12} xl={12} className="d-flex flex-column align-items-center text-center mt-2">   
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Lista de pedidos"} />
+                                    <div className="space"></div>
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Editar mi contraseña"} />
+                                    <div className="space"></div>
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Activar usuario"} />
+                                    <div className="space"></div>
+                                    <div className="logout" onClick={()=>{handleLogout()}}>
+                                        <p className="logoutText">Logout</p>
+                                        <div className="logoutImg"></div>
+                                    </div>
+                                </Col>
+                            </Row>   
+                        </Container>
+                    }
                     </div>
                   ) : role_ID === 4 ? (
-                      // Contenido para el role_ID igual a 4 (Rol 4)
-                      
                     <div className="userLateralNavbarDesign">
                         
                     {
