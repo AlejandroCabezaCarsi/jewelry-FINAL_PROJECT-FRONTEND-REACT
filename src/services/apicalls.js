@@ -15,4 +15,9 @@ export const getUserInfoByToken = async (token) => {
   
     return await axios.get(`http://localhost:8000/api/getUserInfoByToken`, config);
   }
-  
+
+export const register = async (userData) => {
+
+  return await axios.post("http://localhost:8000/api/register", userData)
+
+}

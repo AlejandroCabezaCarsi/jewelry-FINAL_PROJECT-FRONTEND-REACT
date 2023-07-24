@@ -1,0 +1,30 @@
+.registerDesign{
+    min-height: 75vh;
+    max-width: 100vw;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerFormDesign{
+
+    
+    border: solid black 0.2em;
+    border-radius: 0.4em;
+
+}
+
+.registerButton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black ;
+        color: white;
+        cursor: pointer;
+        width: 15em;
+    height: 2em;
+
+    margin-top: 2em;
+    
+}

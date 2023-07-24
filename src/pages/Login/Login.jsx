@@ -65,6 +65,10 @@ const logMe = () => {
             setTimeout(() => {
                 navigate("/");
             }, 3500);
+
+            //---------------------------------------------------------
+            //ARREGLAR WELCOME
+            //---------------------------------------------------------
             
             setWelcome(`Bienvenid@ de nuevo ${userInfo.data.data.name}`);
             console.log(welcome)
