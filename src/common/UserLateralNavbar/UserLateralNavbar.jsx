@@ -49,6 +49,8 @@ export const UserLateralNavbar = () => {
                                 <Col sm={12} md={12}  lg={12} xl={12} className="d-flex flex-column align-items-center text-center mt-2">   
                                     <ChangeViewButtonUserLateralNavbar path={""} name={"Ver pedidos"} />
                                     <div className="space"></div>
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Editar mi perfil"} />
+                                    <div className="space"></div>
                                     <ChangeViewButtonUserLateralNavbar path={""} name={"Editar mi contraseña"} />
                                     <div className="space"></div>
                                     <ChangeViewButtonUserLateralNavbar path={""} name={"Lista de usuarios"} />
@@ -76,13 +78,15 @@ export const UserLateralNavbar = () => {
                         <Container className="d-flex justify-content-center">
                             <Row >
                                 <Col sm={12} md={12}  lg={12} xl={12} className="d-flex flex-column align-items-center text-center mt-2">   
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Ver pedidos"} />
-                                    <div className="space"></div>
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Editar mi contraseña"} />
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Ver pedidos"}/>
                                     <div className="space"></div>
                                     <ChangeViewButtonUserLateralNavbar path={""} name={"Lista de usuarios"} />
                                     <div className="space"></div>
                                     <ChangeViewButtonUserLateralNavbar path={""} name={"Lista de trabajadores"} />
+                                    <div className="space"></div>
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Editar mi perfil"} />
+                                    <div className="space"></div>
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Editar mi contraseña"} />
                                     <div className="space"></div>
                                     <ChangeViewButtonUserLateralNavbar path={""} name={"Crear producto"} />
                                     <div className="space"></div>
@@ -103,6 +107,8 @@ export const UserLateralNavbar = () => {
                             <Row >
                                 <Col sm={12} md={12}  lg={12} xl={12} className="d-flex flex-column align-items-center text-center mt-2">   
                                     <ChangeViewButtonUserLateralNavbar path={""} name={"Lista de pedidos"} />
+                                    <div className="space"></div>
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Editar mi perfil"} />
                                     <div className="space"></div>
                                     <ChangeViewButtonUserLateralNavbar path={""} name={"Editar mi contraseña"} />
                                     <div className="space"></div>

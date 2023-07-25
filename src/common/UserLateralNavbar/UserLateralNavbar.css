@@ -2,12 +2,13 @@
 
 .userLateralNavbarDesign{
     width: 19.8vw;
-    height: 70vh;
+    height: auto;
     border-radius: 0.4em;
     display: flex;
     overflow-y: auto;
     box-sizing: border-box;
     background-color: grey;
+    margin-bottom: 1em;
     
 }
 
