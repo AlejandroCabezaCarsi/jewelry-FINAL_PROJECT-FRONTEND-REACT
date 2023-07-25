@@ -26,10 +26,10 @@ export const Profile = () => {
         }
     }, [role_ID, navigate]);
 
-    const [orders, setOrders] = useState("")
+    const [orders, setOrders] = useState([])
 
     useEffect(()=>{
-        if (orders === ""){
+        if (orders.length === 0){
             getAllOrdersByUserID(token)
                 .then((results) => {
                     setOrders(results.data.data)
@@ -39,7 +39,7 @@ export const Profile = () => {
         }
 
         console.log(orders)
-    })
+    },[orders,token])
 
     return(
         <div className="profileDesign">
@@ -60,7 +60,7 @@ export const Profile = () => {
                 <Row className="d-flex flex-row justify-content-around ">
                     
 
-                    {orders !== "" 
+                    {orders.length > 0
 
                         ? orders.map((order) =>(
 
@@ -79,6 +79,8 @@ export const Profile = () => {
                             <Col xs={12} sm={12} md={12} lg={12}>                    
                                 <div className="emptyOrders">NO TIENES NINGUNA COMPRA</div>
                             </Col>
+
+                            
                         )
                     }
                 </Row>

@@ -9,6 +9,7 @@ export const InputText = ({
   functionHandler,
   onBlurFunction,
 }) => {
+
   return (
     <>
       <input

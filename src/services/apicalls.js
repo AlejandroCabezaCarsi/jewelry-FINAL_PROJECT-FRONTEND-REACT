@@ -36,3 +36,15 @@ export const getAllOrdersByUserID = async (token) => {
 
 }
 
+
+export const updateUser = async (token, data) => {
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  };
+
+  return await axios.put(`${root}update`,data, config)
+
+}
