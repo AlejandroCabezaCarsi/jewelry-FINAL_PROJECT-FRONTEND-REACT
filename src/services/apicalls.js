@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const root = "http://localhost:8000/api/";
+
 export const loginMe = async (credentials) => {
 
   return await axios.post(`http://localhost:8000/api/login`, credentials);
@@ -19,6 +21,18 @@ export const getUserInfoByToken = async (token) => {
 export const register = async (userData) => {
 
   return await axios.post("http://localhost:8000/api/register", userData)
+
+}
+
+export const getAllOrdersByUserID = async (token) => {
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  };
+
+  return await axios.get(`${root}getAllOrdersByUserID`, config)
 
 }
 

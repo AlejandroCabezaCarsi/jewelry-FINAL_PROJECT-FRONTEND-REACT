@@ -9,10 +9,10 @@ export const BuyCard = ({date,status,products, picture, price}) => {
             <Container>
                 <Row className="d-flex flex-row justify-content-around">
                     <Col xs={7} sm={5} md={5} lg={5}>
-                        <div className="buyDate">{date} HOLA</div>
+                        <div className="buyDate">{date}</div>
                     </Col>
                     <Col xs={5}sm={4} md={4} lg={4}>
-                        <div className="statusBuy">{status} HOLA</div>
+                        <div className="statusBuy">{status}</div>
                     </Col>
                 </Row>
 

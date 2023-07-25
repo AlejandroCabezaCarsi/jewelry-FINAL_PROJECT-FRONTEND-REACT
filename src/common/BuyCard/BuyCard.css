@@ -1,8 +1,9 @@
 .buyCardDesign{
     height: 19em;
     width: 100%;
-    background-color: blue;
     margin-bottom: 2em;
+    border: solid black 0.1em;
+    background-color: grey;
 }
 
 .buyDate{

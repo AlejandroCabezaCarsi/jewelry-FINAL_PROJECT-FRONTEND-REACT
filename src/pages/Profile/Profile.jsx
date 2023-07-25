@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Profile.css";
 import { UserLateralNavbar } from "../../common/UserLateralNavbar/UserLateralNavbar";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { userData } from "../Login/userSlice";
 import { Col, Container, Row } from "react-bootstrap";
 import { BuyCard } from "../../common/BuyCard/BuyCard";
+import { getAllOrdersByUserID } from "../../services/apicalls";
 
 export const Profile = () => {
 
@@ -14,12 +15,31 @@ export const Profile = () => {
     const dataUser = useSelector(userData)
 
     const role_ID= dataUser.dataUser.role
+
+    const token = dataUser.credentials.token
+
+    //Check if the user 
     
     useEffect(() => {
         if (role_ID === "" || role_ID < 1 || role_ID > 4) {
             navigate("/");
         }
     }, [role_ID, navigate]);
+
+    const [orders, setOrders] = useState("")
+
+    useEffect(()=>{
+        if (orders === ""){
+            getAllOrdersByUserID(token)
+                .then((results) => {
+                    setOrders(results.data.data)
+                    
+                })
+                .catch((error) => console.log(error));
+        }
+
+        console.log(orders)
+    })
 
     return(
         <div className="profileDesign">
@@ -35,15 +55,32 @@ export const Profile = () => {
         </div>
 
         <div className="profileContent">
+
             <Container>
                 <Row className="d-flex flex-row justify-content-around ">
-                    <Col xs={12} sm={6} md={6} lg={6}>                    
-                        <BuyCard/>
-                    </Col>   
-                    <Col xs={12} sm={6} md={6} lg={6}>                    
-                        <BuyCard/>
-                    </Col>   
-                      
+                    
+
+                    {orders !== "" 
+
+                        ? orders.map((order) =>(
+
+                            <Col key={order.id} xs={12} sm={6} md={6} lg={6}>
+                                <BuyCard 
+                                order={order} 
+                                date={order.date} 
+                                status={order.status_orders.name}
+                                products={order.product.length}
+                                picture={order.picture}
+                                price={order.price}
+                                />
+                            </Col>
+                        ))
+                        : (
+                            <Col xs={12} sm={12} md={12} lg={12}>                    
+                                <div className="emptyOrders">NO TIENES NINGUNA COMPRA</div>
+                            </Col>
+                        )
+                    }
                 </Row>
 
             </Container>
