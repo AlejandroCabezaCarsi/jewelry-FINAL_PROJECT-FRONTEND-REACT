@@ -10,19 +10,27 @@ export const checkError = (name, value) => {
         return "";
   
       case "password":
-      //   if(value.length < 8){
-      //     return "El password debe de tener 8 caracteres minimo";
+        if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(value)){
+          return "La contraseña debe contener al menos una mayúscula, una minúscula, un número y tener al menos 8 caracteres.";
 
-      // }
-      case "contraseña":
-        // if(value.length < 8){
-        //     return "El password debe de tener 8 caracteres minimo";
-  
-        // }
+        }
+
         return "";
-  
-      case "name":
-        break;
+        
+      case "newPassword":
+        if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(value)){
+          return "La contraseña debe contener al menos una mayúscula, una minúscula, un número y tener al menos 8 caracteres.";
+
+        }
+      
+        return "";
+      case "oldPassword":
+        if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(value)){
+          return "La contraseña debe contener al menos una mayúscula, una minúscula, un número y tener al menos 8 caracteres.";
+
+        }
+      
+        return "";
   
       default:
         console.log("Unknown format");

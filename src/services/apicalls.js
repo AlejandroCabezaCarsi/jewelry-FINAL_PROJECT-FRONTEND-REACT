@@ -48,3 +48,13 @@ export const updateUser = async (token, data) => {
   return await axios.put(`${root}update`,data, config)
 
 }
+
+export const updatePassword = async (token, data) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  };
+
+  return await axios.put(`${root}updatePassword`, data, config);
+}
