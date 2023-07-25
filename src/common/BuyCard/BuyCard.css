@@ -1,0 +1,62 @@
+.buyCardDesign{
+    height: 19em;
+    width: 100%;
+    background-color: blue;
+    margin-bottom: 2em;
+}
+
+.buyDate{
+    height: 2em;
+    width: 100%;
+    background-color: yellow;
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.statusBuy{
+    height: 2em;
+    width: 100%;
+    background-color: aqua;
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2em;
+
+}
+.numberOfProducts{
+    height: 2em;
+    width: 100%;
+    background-color: aqua;
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.productPicture{
+    height: 8em;
+    width: 100%;
+    background-color: red;
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: st;
+    align-items: center;
+
+
+
+}
+
+.price{
+    height: 3em;
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 0.5em;
+
+}
+
