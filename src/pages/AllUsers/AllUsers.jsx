@@ -5,7 +5,7 @@ import { UserLateralNavbar } from "../../common/UserLateralNavbar/UserLateralNav
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { userData } from "../Login/userSlice";
-import { getAllUsers } from "../../services/apicalls";
+import { getAllRoles, getAllUsers, getAllUsersFiltered } from "../../services/apicalls";
 import { UserCard } from "../../common/UserCard/UserCard";
 
 export const AllUsers = () => {
@@ -33,62 +33,136 @@ export const AllUsers = () => {
             getAllUsers(token)
                 .then((results)=>{
                     setUsers(results.data.data)
-                    console.log(results.data.data)
                 })
                 .catch((error) => console.log(error));
         }
     },[users, token])
+    const [roles, setRoles] = useState([])
+    
+    useEffect(()=>{
+        getAllRoles(token)
+            .then((response)=>{
+                setRoles(response.data.data)
+            })
+    },[token])
+
+    const [roleSelected, setRoleSelected] = useState("")
+
+    console.log(roleSelected)
+
+    const handleRoleSelected = (event) => {
+        setRoleSelected(event.target.value)
+    }
+
+    useEffect(()=>{
+        if (roleSelected != ""){
+                
+            getAllUsersFiltered(token, roleSelected)
+                .then((response)=>{
+                    setUsers(response.data.data)
+                    console.log(response.data.data)
+                })
+                .catch((error) => console.log(error));
+        } else {
+            getAllUsers(token)
+                .then((results)=>{
+                    setUsers(results.data.data)
+                })
+                .catch((error) => console.log(error));
+        }
+    },[roleSelected])
+    
+
+
+    
+
     
 
     return(
         <div className="allUsersDesign">
 
-            <div className="lateralNavbar ">
-                <Container fluid>
-                    <Row>
-                        <Col sm={2} md={2} lg={2}>                    
-                            <UserLateralNavbar/>
-                        </Col>   
-                    </Row>
-                </Container>
-            
-            </div>
+            <Container fluid>
+                <Row>
+                    <div className="filterNavbar">
+                        <Container>
+                            <Row className="d-flex justify-content-end">
+                                <Col sm={2} md={2} lg={2}>
+                                    <select
+                                        value={roleSelected}
+                                        onChange={handleRoleSelected}
+                                    >
 
-            <div className="allUsersContent">
+                                        <option value="">Filtrar por rol</option>
+                                        {roles.length > 0
+                                        
+                                        ? roles.map((role)=>(
+                                            <option key={role.id} value={role.id}>
+                                                {role.role}
+                                            </option>
+                                        ))
+                                        : null
+                                        }
 
-                <Container>
-                    <Row>
+                                    </select>
 
-                        {users.length > 0
-                        
-                            ? users.map((user)=>(
-                                <Col key={user.id} xs={12} sm={6} md={6} lg={4}>
-                                    <UserCard
-                                    
-                                    role = {user.role.role}
-                                    deleted_at = {user.deleted_at === null
-                                                    ? "Active"
-                                                    : "Inactive"
-                                    }
-                                    email = {user.email} 
-                                    name = {user.name}
-                                    surname = {user.surname}
-                                    />
                                 </Col>
-                            ))
-                            : (
-                                <Col xs={12} sm={12} md={12} lg={12}>                    
-                                <div className="emptyOrders">CARGANDO USUARIOS</div>
-                            </Col>
-                            )
-                        
-                        }
+                                <Col sm={2} md={2} lg={2}>
+                                    <input/>
+                                </Col>
+                                <Col sm={2} md={2} lg={3}>
+                                    <input/>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </div>
+                </Row>
+                <Row>
+                    <Col  sm={2} md={2} lg={3}>                   
+                        <div className="lateralNavbar ">
+                            <Container fluid>
+                                <Row>
+                                    <Col sm={2} md={2} lg={2}>                    
+                                        <UserLateralNavbar/>
+                                    </Col>   
+                                </Row>
+                            </Container>
+                        </div>
+                    </Col>
+                    <Col>                   
+                        <div className="allUsersContent">
 
-                    </Row>
-                </Container>
+                            <Container>
+                                <Row>
 
-            </div>
+                                    {users.length > 0
 
+                                        ? users.map((user)=>(
+                                            <Col key={user.id} xs={12} sm={6} md={6} lg={4}>
+                                                <UserCard
+
+                                                role = {user.role.role}
+                                                deleted_at = {user.deleted_at === null
+                                                                ? "Active"
+                                                                : "Inactive"
+                                                }
+                                                email = {user.email} 
+                                                name = {user.name}
+                                                surname = {user.surname}
+                                                />
+                                            </Col>
+                                        ))
+                                        : (
+                                            <Col xs={12} sm={12} md={12} lg={12}>                    
+                                            <div className="emptyOrders">CARGANDO USUARIOS</div>
+                                        </Col>
+                                        )    
+                                    }
+                                </Row>
+                            </Container>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
         </div>
     )
 

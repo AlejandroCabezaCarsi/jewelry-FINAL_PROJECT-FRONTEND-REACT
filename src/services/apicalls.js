@@ -71,3 +71,35 @@ export const getAllUsers = async (token) => {
 
 
 }
+
+export const getAllRoles = async (token) => {
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  };
+
+  return await axios.get(`${root}getAllRoles`,config);
+
+
+}
+
+export const getAllUsersFiltered = async (token, role_ID) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  };
+
+  
+  const data = {
+    role_ID: role_ID
+  };
+  console.log(config)
+  console.log(data)
+  
+  return await axios.post(`${root}getAllUsersFiltered`, data, config);
+}
+
+
