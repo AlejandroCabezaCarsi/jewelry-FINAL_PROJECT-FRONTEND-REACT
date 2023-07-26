@@ -15,7 +15,9 @@ export const UpdateProfile = () => {
 
   const token = dataUser.credentials.token;
 
-  console.log(token);
+  if(token === ""){
+    navigate("/")
+  }
 
   const [credentials, setCredentials] = useState({
     name: "",

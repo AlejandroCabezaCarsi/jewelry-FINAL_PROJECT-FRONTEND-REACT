@@ -9,11 +9,18 @@ import { updatePassword } from "../../services/apicalls";
 import { useNavigate } from "react-router-dom";
 
 export const UpdatePassword = () => {
+
   const navigate = useNavigate();
 
   const dataUser = useSelector(userData);
 
   const token = dataUser.credentials.token;
+
+  //CHECK IF THE USER IS LOGGED
+
+  if(token === ""){
+    navigate("/")
+  }
 
   const [passwordData, setPasswordData] = useState({
     oldPassword: "",
