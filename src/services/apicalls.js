@@ -120,3 +120,20 @@ export const getAllUsersFiltered = async (token, roleSelected, nameOrEmail, ) =>
     return await axios.post(`${root}getAllUsersFiltered`, data, config)
 
   }
+
+
+// export const getAllDeletedUsers = async (token) => {
+
+//     const config = {
+      
+//       headers: {
+//         Authorization: `Bearer ${token}`,
+//       },
+//     }
+
+//     return await axios.post(`${root}getAllUsersFiltered`,config)
+
+//   }
+
+
+

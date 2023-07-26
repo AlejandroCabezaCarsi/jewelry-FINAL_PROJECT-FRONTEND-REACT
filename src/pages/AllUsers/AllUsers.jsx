@@ -60,17 +60,11 @@ export const AllUsers = () => {
         setNameOrEmail(event.target.value)
     }
     
-    // const [deleted_at, setDeleted_at] = useState("")
-    // console.log(deleted_at)
-    
-    // const handleDeleted_at = (event) => {
-    //     setDeleted_at(event.target.value)
-    // }
     
     useEffect(()=>{
-
+        
         if (roleSelected != "" || nameOrEmail != "" ){
-
+            
             const bring = setTimeout(() => {
                 
                 getAllUsersFiltered(token, roleSelected, nameOrEmail)
@@ -94,6 +88,23 @@ export const AllUsers = () => {
     },[roleSelected, nameOrEmail])
 
     
+    // const [deleted_at, setDeleted_at] = useState("")
+    // console.log(deleted_at)
+    
+    // const handleDeleted_at = (event) => {
+    //     setDeleted_at(event.target.value)
+    // }
+
+    // useEffect(()=>{
+    //     if(deleted_at === "on"){
+    //         getAllDeletedUsers(token)
+    //             .then((response) => {
+    //                 console.log(response);
+    //             })
+    //             .catch((error) => console.log(error));
+
+    //     };
+    // });
 
     
 
@@ -128,9 +139,9 @@ export const AllUsers = () => {
                                 <Col sm={2} md={2} lg={2}>
                                     <input type="text" value={nameOrEmail} onChange={handleNameOrEmail}/>
                                 </Col>
-                                <Col sm={2} md={2} lg={3}>
-                                    {/* <Switch value={1} onChange={handleDeleted_at}/> */}
-                                </Col>
+                                {/* <Col sm={2} md={2} lg={3}>
+                                    <input type="checkbox" checked={deleted_at} onChange={handleDeleted_at}/>
+                                </Col> */}
                             </Row>
                         </Container>
                     </div>
