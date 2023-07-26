@@ -85,21 +85,38 @@ export const getAllRoles = async (token) => {
 
 }
 
-export const getAllUsersFiltered = async (token, role_ID) => {
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`
+// export const getAllUsersFiltered = async (token, role_ID) => {
+//   const config = {
+//     headers: {
+//       Authorization: `Bearer ${token}`
+//     }
+//   };
+
+  
+//   const data = {
+//     role_ID: role_ID
+//   };
+//   console.log(config)
+//   console.log(data)
+  
+//   return await axios.post(`${root}getAllUsersFiltered`, data, config);
+// }
+
+export const getAllUsersFiltered = async (token, roleSelected, nameOrEmail, ) => {
+
+    const data ={
+      roleSelected,
+      nameOrEmail,
+    
     }
-  };
 
-  
-  const data = {
-    role_ID: role_ID
-  };
-  console.log(config)
-  console.log(data)
-  
-  return await axios.post(`${root}getAllUsersFiltered`, data, config);
-}
+    const config = {
+      
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
 
+    return await axios.post(`${root}getAllUsersFiltered`, data, config)
 
+  }

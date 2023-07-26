@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { userData } from "../Login/userSlice";
 import { getAllRoles, getAllUsers, getAllUsersFiltered } from "../../services/apicalls";
 import { UserCard } from "../../common/UserCard/UserCard";
+import { Switch } from "@mui/material";
 
 export const AllUsers = () => {
 
@@ -48,31 +49,49 @@ export const AllUsers = () => {
 
     const [roleSelected, setRoleSelected] = useState("")
 
-    console.log(roleSelected)
-
     const handleRoleSelected = (event) => {
         setRoleSelected(event.target.value)
     }
 
-    useEffect(()=>{
-        if (roleSelected != ""){
-                
-            getAllUsersFiltered(token, roleSelected)
-                .then((response)=>{
-                    setUsers(response.data.data)
-                    console.log(response.data.data)
-                })
-                .catch((error) => console.log(error));
-        } else {
-            getAllUsers(token)
-                .then((results)=>{
-                    setUsers(results.data.data)
-                })
-                .catch((error) => console.log(error));
-        }
-    },[roleSelected])
+    const [nameOrEmail, setNameOrEmail] = useState("")
+    console.log(nameOrEmail)
     
+    const handleNameOrEmail = (event) => {
+        setNameOrEmail(event.target.value)
+    }
+    
+    // const [deleted_at, setDeleted_at] = useState("")
+    // console.log(deleted_at)
+    
+    // const handleDeleted_at = (event) => {
+    //     setDeleted_at(event.target.value)
+    // }
+    
+    useEffect(()=>{
 
+        if (roleSelected != "" || nameOrEmail != "" ){
+
+            const bring = setTimeout(() => {
+                
+                getAllUsersFiltered(token, roleSelected, nameOrEmail)
+                    .then((response)=>{
+                        setUsers(response.data.data)
+                        console.log(response.data.data)
+                    })
+                    .catch((error) => console.log(error));
+                }, 350);
+
+                return() => clearTimeout(bring)
+
+            } else {
+                getAllUsers(token)
+                    .then((results)=>{
+                        setUsers(results.data.data)
+                    })
+                    .catch((error) => console.log(error));
+        }
+                
+    },[roleSelected, nameOrEmail])
 
     
 
@@ -107,10 +126,10 @@ export const AllUsers = () => {
 
                                 </Col>
                                 <Col sm={2} md={2} lg={2}>
-                                    <input/>
+                                    <input type="text" value={nameOrEmail} onChange={handleNameOrEmail}/>
                                 </Col>
                                 <Col sm={2} md={2} lg={3}>
-                                    <input/>
+                                    {/* <Switch value={1} onChange={handleDeleted_at}/> */}
                                 </Col>
                             </Row>
                         </Container>
