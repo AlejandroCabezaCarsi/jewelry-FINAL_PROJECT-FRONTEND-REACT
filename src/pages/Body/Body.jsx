@@ -7,6 +7,7 @@ import { Profile } from "../Profile/Profile";
 import { UpdateProfile } from "../UpdateProfile/UpdateProfile";
 import { UpdatePassword } from "../UpdatePassword/UpdatePassword";
 import { AllUsers } from "../AllUsers/AllUsers";
+import { RestoreAccount } from "../RestoreAccount/RestoreAccount";
 
 
 export const Body = () => {
@@ -21,6 +22,8 @@ export const Body = () => {
                 <Route path="/UpdateProfile" element={<UpdateProfile/>}/>
                 <Route path="/UpdatePassword" element={<UpdatePassword/>}/>
                 <Route path="/AllUsers" element={<AllUsers/>}/>
+                <Route path="/RestoreAccount" element={<RestoreAccount/>}/>
+
             </Routes>
         </>
     )

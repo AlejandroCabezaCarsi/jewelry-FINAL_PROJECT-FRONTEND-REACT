@@ -122,18 +122,20 @@ export const getAllUsersFiltered = async (token, roleSelected, nameOrEmail, ) =>
   }
 
 
-// export const getAllDeletedUsers = async (token) => {
+export const restoreUser = async (token, email) => {
 
-//     const config = {
+  const config = {
       
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//       },
-//     }
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
 
-//     return await axios.post(`${root}getAllUsersFiltered`,config)
+  console.log(config)
 
-//   }
+  return await axios.post(`${root}restoreAccount`, email, config)
+
+}
 
 
 

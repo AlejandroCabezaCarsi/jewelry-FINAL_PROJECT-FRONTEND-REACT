@@ -87,6 +87,8 @@ export const UserLateralNavbar = () => {
                                     <div className="space"></div>
                                     <ChangeViewButtonUserLateralNavbar path={""} name={"Crear producto"} />
                                     <div className="space"></div>
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Habilitar cuenta"} />
+                                    <div className="space"></div>
                                     <div className="logout d-flex aling-items-center justify-content-center" onClick={()=>{handleLogout()}}>
                                         <p className="logoutText">Logout</p>
                                         <div className="logoutImg"></div>
