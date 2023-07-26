@@ -58,3 +58,16 @@ export const updatePassword = async (token, data) => {
 
   return await axios.put(`${root}updatePassword`, data, config);
 }
+
+export const getAllUsers = async (token) => {
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  };
+
+  return await axios.get(`${root}getAllUsers`,config);
+
+
+}

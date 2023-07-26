@@ -1,27 +1,24 @@
-.userCardDesign{
+.userCardDesign {
     height: fit-content;
     width: 12em;
     background-color: green;
-    
-    
+    margin: 2em;
 }
+
 
 .userCardRole{
 
     height: 1.5em;
     width: 100%;
     background-color: red;
-    
-
+    overflow: hidden;    
 }
 
 .userCardStatus{
-
     height: 1.5em;
     width: 100%;
     border-radius: 2em;
-    background-color: aqua;
-
+    background-color: aqua;   
 }
 
 .userCardEmail{
@@ -35,8 +32,16 @@
 }
 
 .viewDetail{
-
     background-color: black;
     color: white;
+}
 
+.scrollIfNeeded{
+    overflow-x: auto; 
+    white-space: nowrap; 
+    scrollbar-width: none;
+}
+
+.scrollIfNeeded::-webkit-scrollbar {
+    display: none;
 }
