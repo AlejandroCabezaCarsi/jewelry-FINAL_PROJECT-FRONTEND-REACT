@@ -1,0 +1,42 @@
+.userCardDesign{
+    height: fit-content;
+    width: 12em;
+    background-color: green;
+    
+    
+}
+
+.userCardRole{
+
+    height: 1.5em;
+    width: 100%;
+    background-color: red;
+    
+
+}
+
+.userCardStatus{
+
+    height: 1.5em;
+    width: 100%;
+    border-radius: 2em;
+    background-color: aqua;
+
+}
+
+.userCardEmail{
+    height: 1.5em;
+    width: 100%;
+    background-color: aqua;
+}
+
+.fontSize{
+    font-size: small;
+}
+
+.viewDetail{
+
+    background-color: black;
+    color: white;
+
+}
