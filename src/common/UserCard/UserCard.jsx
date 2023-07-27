@@ -1,8 +1,11 @@
 import React from "react";
 import "./UserCard.css"; 
 import { Col, Container, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
-export const UserCard = ({role,deleted_at, email, name, surname}) => {
+export const UserCard = ({role,deleted_at, email, name, surname, id}) => {
+
+    const navigate = useNavigate()
 
     return(
 
@@ -34,7 +37,7 @@ export const UserCard = ({role,deleted_at, email, name, surname}) => {
                 </Row>
                 <Row>
                     <Col xs={12} sm={12} md={12} lg={12}>                        
-                        <div className="viewDetail mt-2 scrollIfNeeded">Abrir en detalle</div>
+                        <div className="viewDetail mt-2 scrollIfNeeded" onClick={() => navigate(`/UserDetail/${id}`)}>Abrir en detalle</div>
                     </Col>
                 </Row>
             </Container>

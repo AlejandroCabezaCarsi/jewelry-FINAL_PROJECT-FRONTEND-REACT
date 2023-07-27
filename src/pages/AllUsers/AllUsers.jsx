@@ -182,6 +182,7 @@ export const AllUsers = () => {
                                                 email = {user.email} 
                                                 name = {user.name}
                                                 surname = {user.surname}
+                                                id = {user.id}
                                                 />
                                             </Col>
                                         ))

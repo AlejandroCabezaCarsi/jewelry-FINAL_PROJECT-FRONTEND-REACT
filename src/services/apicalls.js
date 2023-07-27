@@ -130,5 +130,17 @@ export const restoreUser = async (token, email) => {
 
 }
 
+export const getUserDataByID = async (token, id) => {
+
+  const config = {
+      
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+
+  return await axios.post(`${root}getUserDataByID`, {id:id}, config)
+}
+
 
 
