@@ -24,7 +24,7 @@ export const register = async (userData) => {
 
 }
 
-export const getAllOrdersByUserID = async (token) => {
+export const getAllOrdersByUserID = async (token, id) => {
 
   const config = {
     headers: {
@@ -32,7 +32,7 @@ export const getAllOrdersByUserID = async (token) => {
     }
   };
 
-  return await axios.get(`${root}getAllOrdersByUserID`, config)
+  return await axios.post(`${root}getAllOrdersByUserID`, {id:id}, config)
 
 }
 

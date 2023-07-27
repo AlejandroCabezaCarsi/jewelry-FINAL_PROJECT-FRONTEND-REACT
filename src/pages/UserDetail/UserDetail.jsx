@@ -5,14 +5,16 @@ import { userData } from "../Login/userSlice";
 import { useNavigate, useParams } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import { UserLateralNavbar } from "../../common/UserLateralNavbar/UserLateralNavbar";
-import { getUserDataByID } from "../../services/apicalls";
+import { getAllOrdersByUserID, getUserDataByID } from "../../services/apicalls";
+import { UserCardDetail } from "../../common/UserCardDetail/UserCardDetail";
+import { BuyCard } from "../../common/BuyCard/BuyCard";
 
 export const UserDetail = () => {
     const navigate = useNavigate()
 
     const dataUser = useSelector(userData)
 
-    const role = dataUser.dataUser.role
+    const userRole = dataUser.dataUser.role
 
     const token = dataUser.credentials.token
 
@@ -39,6 +41,21 @@ export const UserDetail = () => {
         }
     }, [])
 
+    const [orders, setOrders] = useState([])
+
+    useEffect(()=>{
+
+        if(orders.length === 0){
+            getAllOrdersByUserID(token, id)
+                .then((response)=>{
+                    setOrders(response.data.data)
+                })
+                .catch((error) => {
+                    console.log('Error retrieving orders', error);})}
+        
+
+    },[])
+
     return(
         <div className="userDetailDesign">
 
@@ -51,12 +68,53 @@ export const UserDetail = () => {
                 <Col sm={9} md={9} lg={9} className="d-flex justify-content-center">
                     <div className="detailContent">
 
-                        <Container fluid className="fondo">
+                        <Container fluid>
                             <Row>
-                                <Col>
-                                    <div className="userDetailName">{userDataBackend.name}</div>
+                                <Col className="d-flex ">
+                                   {userDataBackend.lengt !== 0
+                                        ? userDataBackend.map((user)=> (
+                                            <UserCardDetail
+                                            deleted_at = {user.deleted_at}
+                                            email = {user.email}
+                                            name = {user.name}
+                                             surname = {user.surname}
+                                             id = {user.id}
+                                             created_at = {user.created_at}
+                                              city = {user.city}
+                                              postalCode = {user. postalCode}
+                                              address = {user.address}
+                                              role = {user.role}
+                                            />
+                                        
+                                        ))
+                                        : null
+                                    }
                                 </Col>
                                 
+                            </Row>
+
+                            <Row className="d-flex justify-content-center">
+                                <Col className="text-center mb-3">
+                                    <div className="userDetailOrdersTitle">TODAS LAS COMPRAS DEL USUARIO</div>
+                                </Col>
+                            </Row>
+
+                            <Row className="d-flex justify-content-center">
+                                {orders.length !== 0
+                                    ? orders.map((order=>(
+                                        <Col sm={8} md={8} lg={8}>
+                                            <BuyCard 
+                                            date={order.date}
+                                            status={order.status_orders.name}
+                                            products={order.product.length}
+                                            // picture={}
+                                            // price ={}
+                                            />
+                                        </Col>
+                                    )))
+                                    : null
+                                }
+
                             </Row>
                         </Container>
 
@@ -66,6 +124,9 @@ export const UserDetail = () => {
             </Row>
         </Container>
 
+        
+
+        
 
         </div>
     )

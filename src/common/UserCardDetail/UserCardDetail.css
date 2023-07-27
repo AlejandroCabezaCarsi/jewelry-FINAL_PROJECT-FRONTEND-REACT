@@ -1,0 +1,17 @@
+.userCardDetailDesign{
+    height: fit-content;
+    width: 100%;
+    background-color: green;
+    margin: 2em;
+}
+
+.buttonUserCardDetail{
+    height: max-content;
+    width: max-content;
+    background-color: chartreuse;
+    padding: 0.5em;
+}
+
+.fontSize{
+    font-size: medium;
+}
