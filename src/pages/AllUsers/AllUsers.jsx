@@ -5,7 +5,7 @@ import { UserLateralNavbar } from "../../common/UserLateralNavbar/UserLateralNav
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { userData } from "../Login/userSlice";
-import { getAllRoles, getAllUsers, getAllUsersFiltered } from "../../services/apicalls";
+import { getAllDeletedUsers, getAllRoles, getAllUsers, getAllUsersFiltered } from "../../services/apicalls";
 import { UserCard } from "../../common/UserCard/UserCard";
 import { Switch } from "@mui/material";
 
@@ -54,7 +54,6 @@ export const AllUsers = () => {
     }
 
     const [nameOrEmail, setNameOrEmail] = useState("")
-    console.log(nameOrEmail)
     
     const handleNameOrEmail = (event) => {
         setNameOrEmail(event.target.value)
@@ -63,14 +62,13 @@ export const AllUsers = () => {
     
     useEffect(()=>{
         
-        if (roleSelected != "" || nameOrEmail != "" ){
+        if (roleSelected != "" || nameOrEmail != ""){
             
             const bring = setTimeout(() => {
                 
                 getAllUsersFiltered(token, roleSelected, nameOrEmail)
                     .then((response)=>{
                         setUsers(response.data.data)
-                        console.log(response.data.data)
                     })
                     .catch((error) => console.log(error));
                 }, 350);
@@ -86,25 +84,30 @@ export const AllUsers = () => {
         }
                 
     },[roleSelected, nameOrEmail])
+   
+    const [deleted_at, setDeleted_at] = useState(false)
 
-    
-    // const [deleted_at, setDeleted_at] = useState("")
-    // console.log(deleted_at)
-    
-    // const handleDeleted_at = (event) => {
-    //     setDeleted_at(event.target.value)
-    // }
+    const handleDeleted_at = () => {
+        setDeleted_at((prevState) => !prevState);
+      };
 
-    // useEffect(()=>{
-    //     if(deleted_at === "on"){
-    //         getAllDeletedUsers(token)
-    //             .then((response) => {
-    //                 console.log(response);
-    //             })
-    //             .catch((error) => console.log(error));
 
-    //     };
-    // });
+    useEffect(()=>{
+        if(deleted_at === true){
+            getAllDeletedUsers(token)
+                .then((response) => {
+                    setUsers(response.data.data)
+                })
+                .catch((error) => console.log(error));
+
+        } else {
+            getAllUsers(token)
+                    .then((results)=>{
+                        setUsers(results.data.data)
+                    })
+                    .catch((error) => console.log(error));
+        }
+    },[deleted_at]);
 
     
 
@@ -139,9 +142,10 @@ export const AllUsers = () => {
                                 <Col sm={2} md={2} lg={2}>
                                     <input type="text" value={nameOrEmail} onChange={handleNameOrEmail}/>
                                 </Col>
-                                {/* <Col sm={2} md={2} lg={3}>
+                                <Col sm={2} md={2} lg={3} className="d-flex justify-content-center">
                                     <input type="checkbox" checked={deleted_at} onChange={handleDeleted_at}/>
-                                </Col> */}
+                                    <div className="checkboxText ms-2">Solo usuarios inactivos</div>
+                                </Col>
                             </Row>
                         </Container>
                     </div>

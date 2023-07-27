@@ -85,23 +85,6 @@ export const getAllRoles = async (token) => {
 
 }
 
-// export const getAllUsersFiltered = async (token, role_ID) => {
-//   const config = {
-//     headers: {
-//       Authorization: `Bearer ${token}`
-//     }
-//   };
-
-  
-//   const data = {
-//     role_ID: role_ID
-//   };
-//   console.log(config)
-//   console.log(data)
-  
-//   return await axios.post(`${root}getAllUsersFiltered`, data, config);
-// }
-
 export const getAllUsersFiltered = async (token, roleSelected, nameOrEmail, ) => {
 
     const data ={
@@ -120,6 +103,16 @@ export const getAllUsersFiltered = async (token, roleSelected, nameOrEmail, ) =>
     return await axios.post(`${root}getAllUsersFiltered`, data, config)
 
   }
+
+  export const getAllDeletedUsers = async (token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  };
+  
+  return await axios.get(`${root}getAllDeletedUsers`, config);
+}
 
 
 export const restoreUser = async (token, email) => {
