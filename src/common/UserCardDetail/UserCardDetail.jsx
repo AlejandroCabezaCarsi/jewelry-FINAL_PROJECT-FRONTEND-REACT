@@ -67,13 +67,13 @@ export const UserCardDetail = ({role, deleted_at, email, name, surname, id, crea
                         deleted_at === null || deleted_at === "" || deleted_at === undefined
 
                         ? null
-                        : <Col xs={3} sm={3} md={3} lg={3} className="d-flex justify-content-center align-items-center">
+                        : <Col xs={3} sm={3} md={3} lg={3} className="d-flex justify-content-center align-items-center" onClick={()=>navigate(`/RestoreUserAccount/${id}`)}>
                                 <div className="restoreAccount buttonUserCardDetail">Habilitar cuenta</div>                        
                         
                             </Col>
                     }
 
-                    <Col xs={3} sm={3} md={3} lg={3} className="d-flex justify-content-center align-items-center">
+                    <Col xs={3} sm={3} md={3} lg={3} className="d-flex justify-content-center align-items-center" onClick={()=>navigate(`/DestroyAccount/${id}`)}>
                         <div className="deleteAccount buttonUserCardDetail">ELIMINAR CUENTA </div>
                     </Col>
                     

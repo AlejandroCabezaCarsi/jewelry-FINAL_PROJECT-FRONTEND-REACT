@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./RestoreAccount.css"; 
+import "./RestoreAccount.css";
 import { Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";

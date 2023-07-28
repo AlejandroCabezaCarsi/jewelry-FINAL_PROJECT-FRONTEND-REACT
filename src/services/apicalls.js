@@ -115,7 +115,7 @@ export const getAllUsersFiltered = async (token, roleSelected, nameOrEmail, ) =>
 }
 
 
-export const restoreUser = async (token, email) => {
+export const restoreUser = async (token, id) => {
 
   const config = {
       
@@ -126,7 +126,7 @@ export const restoreUser = async (token, email) => {
 
   console.log(config)
 
-  return await axios.post(`${root}restoreAccount`, email, config)
+  return await axios.post(`${root}restoreAccount`, {id:id}, config)
 
 }
 

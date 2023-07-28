@@ -96,16 +96,16 @@ export const UserDetail = () => {
 
                         <Container fluid className="d-flex flex-column justify-content-center ">
                             <Row className="r">
-                                <Col xs={12} sm={9} md={9} lg={9} className="d-flex justify-content-center" >
+                                <Col xs={12} sm={9} md={9} lg={12} className="d-flex justify-content-center" >
                                     {userDataBackend.length > 0
                                         ? userDataBackend.map((user)=> (
                                             <UserCardDetail
-                                                deleted_at = {user.deleted_at}
+                                                deleted_at = {(user.deleted_at).split('T')[0]}
                                                 email = {user.email}
                                                 name = {user.name}
                                                 surname = {user.surname}
                                                 id = {user.id}
-                                                created_at = {user.created_at}
+                                                created_at = {(user.created_at).split('T')[0] }
                                                 city = {user.city}
                                                 postalCode = {user. postalCode}
                                                 address = {user.address}
