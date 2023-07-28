@@ -3,12 +3,11 @@ import "./UserCardDetail.css";
 import { Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { userData } from "../../pages/Login/userSlice";
+import { useNavigate } from "react-router-dom";
 
 export const UserCardDetail = ({role, deleted_at, email, name, surname, id, created_at, city, postalCode, address}) => {
 
     const dataUser = useSelector(userData)
-
-    console.log(role)
 
     // const userRole = dataUser.dataUser.role
 
@@ -16,7 +15,8 @@ export const UserCardDetail = ({role, deleted_at, email, name, surname, id, crea
 
     // const deleted_at = "A"
 
-    console.log(deleted_at)
+    const navigate = useNavigate()
+
 
     return(
         <div className="userCardDetailDesign">
@@ -29,6 +29,9 @@ export const UserCardDetail = ({role, deleted_at, email, name, surname, id, crea
                     
                     <Col xs={6} sm={5} md={5} lg={4}>
                         <div className="userCardStatus scrollIfNeeded">{created_at}</div>
+                    </Col>
+                    <Col xs={6} sm={5} md={5} lg={4}>
+                        <div className="userCardStatus scrollIfNeeded">{deleted_at}</div>
                     </Col>
                 </Row>
                 <Row>
@@ -58,15 +61,7 @@ export const UserCardDetail = ({role, deleted_at, email, name, surname, id, crea
                     </Col>
                 </Row>
                 <Row className="d-flex justify-content-around mt-4">
-                    {userRole === 1 && role.id >= 2 || userRole === 2 && role.id >= 3
-                    
-                        ? <Col xs={3} sm={3} md={3} lg={3} className="d-flex justify-content-center align-items-center">
-                        <div className="changeRole buttonUserCardDetail">CAMBIAR ROL</div>                        
-                        
-                            </Col>
-                        : null
-                    
-                    }
+
 
                     {
                         deleted_at === null || deleted_at === "" || deleted_at === undefined

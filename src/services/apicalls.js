@@ -141,6 +141,17 @@ export const getUserDataByID = async (token, id) => {
 
   return await axios.post(`${root}getUserDataByID`, {id:id}, config)
 }
+export const getOneDeletedUserByID = async (token, id) => {
+
+  const config = {
+      
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+
+  return await axios.post(`${root}getOneDeletedUserByID`, {id:id}, config)
+}
 
 
 
