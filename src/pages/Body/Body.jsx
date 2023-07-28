@@ -10,6 +10,7 @@ import { AllUsers } from "../AllUsers/AllUsers";
 import { RestoreAccount } from "../RestoreAccount/RestoreAccount";
 import { UserDetail } from "../UserDetail/UserDetail";
 import { RestoreUserAccount } from "../RestoreUserAccount/RestoreUserAccount";
+import { DestroyAccount } from "../DestroyAccount/DestroyAccount";
 
 
 export const Body = () => {
@@ -27,6 +28,7 @@ export const Body = () => {
                 <Route path="/RestoreAccount" element={<RestoreAccount/>}/>
                 <Route path="/UserDetail/:id" element={<UserDetail/>}/>
                 <Route path="/RestoreUserAccount/:id" element={<RestoreUserAccount/>}/>
+                <Route path="/DestroyAccount/:id" element={<DestroyAccount/>}/>
 
             </Routes>
         </>

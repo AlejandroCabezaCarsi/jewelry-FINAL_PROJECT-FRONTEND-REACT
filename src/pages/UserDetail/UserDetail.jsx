@@ -100,7 +100,13 @@ export const UserDetail = () => {
                                     {userDataBackend.length > 0
                                         ? userDataBackend.map((user)=> (
                                             <UserCardDetail
-                                                deleted_at = {(user.deleted_at).split('T')[0]}
+                                                deleted_at = {
+
+                                                    user.deleted_at === null || user.deleted_at === undefined
+
+                                                    ? null
+                                                    
+                                                    : (user.deleted_at).split('T')[0]}
                                                 email = {user.email}
                                                 name = {user.name}
                                                 surname = {user.surname}

@@ -152,6 +152,41 @@ export const getOneDeletedUserByID = async (token, id) => {
 
   return await axios.post(`${root}getOneDeletedUserByID`, {id:id}, config)
 }
+// export const destroyUser = async (token, id) => {
+
+//   const config = {
+      
+//     headers: {
+//       Authorization: `Bearer ${token}`,
+//     },
+//   }
+
+//   const userID = id
+
+//   console.log(token)
+//   console.log(config)
+//   console.log(userID)
+
+//   return await axios.delete(`${root}destroyUser`, userID, config)
+// }
+
+export const destroyUser = async (token, id) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const data = { id: id }; // Datos que deseas enviar en el cuerpo de la solicitud
+
+  console.log(token);
+  console.log(config);
+  console.log(data);
+
+  return await axios.delete(`${root}destroyUser`, { data: data, ...config });
+};
+
+
 
 
 

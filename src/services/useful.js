@@ -31,6 +31,13 @@ export const checkError = (name, value) => {
         }
       
         return "";
+      case "delete":
+        if(!/\bELIMINAR\b/.test(value)){
+          return "Debes de escribir ELIMINAR en mayúscula";
+
+        }
+      
+        return "";
   
       default:
         console.log("Unknown format");
