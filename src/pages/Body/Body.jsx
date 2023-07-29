@@ -11,6 +11,7 @@ import { RestoreAccount } from "../RestoreAccount/RestoreAccount";
 import { UserDetail } from "../UserDetail/UserDetail";
 import { RestoreUserAccount } from "../RestoreUserAccount/RestoreUserAccount";
 import { DestroyAccount } from "../DestroyAccount/DestroyAccount";
+import { AllProducts } from "../AllProducts/AllProducts";
 
 
 export const Body = () => {
@@ -29,6 +30,7 @@ export const Body = () => {
                 <Route path="/UserDetail/:id" element={<UserDetail/>}/>
                 <Route path="/RestoreUserAccount/:id" element={<RestoreUserAccount/>}/>
                 <Route path="/DestroyAccount/:id" element={<DestroyAccount/>}/>
+                <Route path="/AllProducts" element={<AllProducts/>}/>
 
             </Routes>
         </>

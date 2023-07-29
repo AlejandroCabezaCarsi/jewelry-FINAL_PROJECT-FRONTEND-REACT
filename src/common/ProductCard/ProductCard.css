@@ -1,0 +1,31 @@
+.productCardDesign{
+    width: 13em;
+    height: auto;
+    background-color: red;
+    
+}
+
+.productCardImage{
+    width: 9em;
+    height: 9em;
+    background-color: white;
+}
+
+.productCardName{
+    width: 9em;
+    height: auto;
+    background-color: white;
+}
+.productCardPrice{
+    width: 9em;
+    height: auto;
+    background-color: white;
+}
+
+.addToCartButton{
+    width: 5em;
+    height: auto;
+    background-color: black;
+    color: white;
+}
+
