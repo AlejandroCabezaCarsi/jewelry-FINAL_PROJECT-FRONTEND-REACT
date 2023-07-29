@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./BuyCard.css"; 
 import { Col, Container, Row } from "react-bootstrap";
+import { bringImages } from "../../services/apicalls";
 
-export const BuyCard = ({date,status,products, picture, price}) => {
+export const BuyCard = ({date,status,products, pictures, price}) => {
+
+    // const [images, setImages] = useState([])
+
+    // useEffect(()=>{
+    //     if(products.length === 0){
+            
+    //         bringImages(pictures)
+    //             .then((response)=>{
+    //                 console.log(response)
+    //             })
+
+            
+    //     }
+    // })
+
+    console.log(products[0].name)
 
     return (
         <div className="buyCardDesign">
@@ -18,22 +35,53 @@ export const BuyCard = ({date,status,products, picture, price}) => {
 
                 <Row>
                     <Col>
-                        <div className="numberOfProducts">Productos: {products}</div>
+                        <div className="numberOfProducts">Productos: {products?.length}</div>
                     </Col>
                 </Row>
 
                 <div className="space"></div>
         
-                <Row>
-                    <Col>
-                        <div className="productPicture">HOLA{picture}</div>
+                <Row className="d-flex justify-content-center">
+                    <Col xs={11} sm={11} md={11} lg={11}>                          
+                            {   products
+                                    ?products?.map((product)=>(
+                                        
+                                        <Row className="d-flex align-items-center justify-content-center borderProduct mb-3 p-2">
+
+                                            <Col xs={12} sm={12} md={12} lg={3} className="d-flex justify-content-center mb-3">
+                                                <div className="productPicture"><img src={product.image} alt="Imagen del producto" className="productPicture" /></div>
+                                            </Col>
+
+                                            <Col xs={12} sm={5} md={5} lg={9}>
+
+                                                <Row className="d-flex justify-content-center align-items-center ">
+
+
+                                                    <Col xs={12} sm={12} md={12} lg={12}>
+                                                    <div className="productReference d-flex flex-row mb-1">Número de referencia: <p className="ms-3 textBold">{product.reference}</p></div>
+                                                    </Col>
+                                                    <Col  xs={12} sm={12} md={12} lg={12}>
+                                                    <div className="productName d-flex flex-row mb-1">Nombre del producto: <p className="ms-3 textBold">{product.name}</p></div>
+                                                    </Col>
+                                                    <Col  xs={12} sm={12} md={12} lg={12} >
+                                                    <div className="productPrice d-flex flex-row mb-1">Precio: <p className="ms-3 textBold">{product.price}€</p></div>
+                                                    </Col>
+
+                                                </Row>
+                                            </Col>
+                                        
+
+                                        </Row>
+                                        ))
+                                        : null
+                                    }          
                     </Col>
                 </Row>
         
                 <Row>
                     <Col>
                         <div className="price">TOTAL:
-                            <div className="priceFont">{price}</div>
+                            <div className="priceFont ms-2 textBold">{price}€</div>
                         </div>
                     </Col>
                 </Row>

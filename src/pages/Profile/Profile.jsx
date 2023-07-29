@@ -69,7 +69,7 @@ export const Profile = () => {
                                 order={order} 
                                 date={order.date} 
                                 status={order.status_orders.name}
-                                products={order.product.length}
+                                products={order.products.length}
                                 picture={order.picture}
                                 price={order.price}
                                 />

@@ -35,7 +35,7 @@ export const UserDetail = () => {
         
         let userFounded = false
 
-        if (userDataBackend.length === 0){
+        if (id && userDataBackend.length === 0){
             getOneDeletedUserByID(token,{id})
             .then((response)=>{
                 console.log(response)
@@ -57,13 +57,15 @@ export const UserDetail = () => {
                     setUserDataBackend(response.data.data)
 
                 }
+
+            
             })
             .catch((error) => {
                 console.log('Error retrieving orders', error);})
             }
             
-            
-    }, [])
+            console.log(userDataBackend)
+    }, [id])
 
       
 
@@ -79,8 +81,8 @@ export const UserDetail = () => {
                 .catch((error) => {
                     console.log('Error retrieving orders', error);})}
         
-
-    },[])
+            console.log(orders?.products)
+    },[id])
 
     return(
         <div className="userDetailDesign">
@@ -97,8 +99,10 @@ export const UserDetail = () => {
                         <Container fluid className="d-flex flex-column justify-content-center ">
                             <Row className="r">
                                 <Col xs={12} sm={9} md={9} lg={12} className="d-flex justify-content-center" >
-                                    {userDataBackend.length > 0
+                                
+                                    {userDataBackend?.length > 0
                                         ? userDataBackend.map((user)=> (
+
                                             <UserCardDetail
                                                 deleted_at = {
 
@@ -106,12 +110,12 @@ export const UserDetail = () => {
 
                                                     ? null
                                                     
-                                                    : (user.deleted_at).split('T')[0]}
+                                                    : (user.deleted_at)?.split('T')[0]}
                                                 email = {user.email}
                                                 name = {user.name}
                                                 surname = {user.surname}
                                                 id = {user.id}
-                                                created_at = {(user.created_at).split('T')[0] }
+                                                created_at = {(user.created_at)?.split('T')[0] }
                                                 city = {user.city}
                                                 postalCode = {user. postalCode}
                                                 address = {user.address}
@@ -132,15 +136,15 @@ export const UserDetail = () => {
                             </Row>
 
                             <Row className="d-flex justify-content-center">
-                                {orders.length !== 0
+                                {orders?.length !== 0
                                     ? orders.map((order=>(
                                         <Col xs={12} sm={8} md={8} lg={8}>
                                             <BuyCard 
                                             date={order.date}
                                             status={order.status_orders.name}
-                                            products={order.product.length}
-                                            // picture={}
-                                            // price ={}
+                                            products={order?.products}
+                                            pictures={order.products}
+                                            price ={order.products.reduce((accumulator,product)=>accumulator+ product.price,0)}
                                             />
                                         </Col>
                                     )))
