@@ -187,9 +187,9 @@ export const destroyUser = async (token, id) => {
 };
 
 
-export const bringImages = async (fileName) => {
+export const getAllProducts = async () => {
 
-  return await axios.get(`${root}images/${fileName}`)
+  return await axios.get(`${root}getAllProducts`)
 }
 
 

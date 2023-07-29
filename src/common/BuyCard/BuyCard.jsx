@@ -1,23 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./BuyCard.css"; 
 import { Col, Container, Row } from "react-bootstrap";
-import { bringImages } from "../../services/apicalls";
 
 export const BuyCard = ({date,status,products, pictures, price}) => {
 
-    // const [images, setImages] = useState([])
-
-    // useEffect(()=>{
-    //     if(products.length === 0){
-            
-    //         bringImages(pictures)
-    //             .then((response)=>{
-    //                 console.log(response)
-    //             })
-
-            
-    //     }
-    // })
 
     console.log(products[0].name)
 

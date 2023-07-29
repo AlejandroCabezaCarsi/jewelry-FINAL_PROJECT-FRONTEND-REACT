@@ -14,12 +14,10 @@
 .productCardName{
     width: 9em;
     height: auto;
-    background-color: white;
 }
 .productCardPrice{
     width: 9em;
     height: auto;
-    background-color: white;
 }
 
 .addToCartButton{
@@ -27,5 +25,32 @@
     height: auto;
     background-color: black;
     color: white;
+    cursor: pointer;
 }
+
+.plusButton{
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-image: url("../../assets/plusButton.png") ;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.unitsText{
+    width: 2em;
+    height: 2em;
+}
+
+.minusButton{
+    width: 2em;
+    height: 2em;
+    
+    border-radius: 50%;
+    background-image: url("../../assets/minusButton.png");
+    background-size: contain;
+    cursor: pointer;
+}
+
+
 
