@@ -14,7 +14,7 @@
 }
 
 .changeViewButtonDesign:hover{
-    background-color: rgb(212, 175, 55);
+    background-color: #e31e0e ;
     transition: 0.7s;
     transform: scale(1.1);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);

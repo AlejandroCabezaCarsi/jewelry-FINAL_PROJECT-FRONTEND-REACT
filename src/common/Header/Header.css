@@ -3,3 +3,22 @@
     justify-content: space-between;
     align-items: end;
 }
+
+.profileButton{
+    height: 1em;
+    width: 1em;
+    background-image: url(../../assets/profileButton.png);
+    background-size: cover;
+    cursor: pointer
+}
+
+
+.jewlryLogo{
+    height: 5em;
+    width: 3em;
+    background-image: url(../../assets/jewelryLogo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 1em;
+    cursor: pointer;
+}
