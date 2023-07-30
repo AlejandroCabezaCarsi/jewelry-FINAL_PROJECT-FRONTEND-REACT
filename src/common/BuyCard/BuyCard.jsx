@@ -5,8 +5,6 @@ import { Col, Container, Row } from "react-bootstrap";
 export const BuyCard = ({date,status,products, pictures, price}) => {
 
 
-    console.log(products[0].name)
-
     return (
         <div className="buyCardDesign">
             <Container>
@@ -30,11 +28,11 @@ export const BuyCard = ({date,status,products, pictures, price}) => {
                 <Row className="d-flex justify-content-center">
                     <Col xs={11} sm={11} md={11} lg={11}>                          
                             {   products
-                                    ?products?.map((product)=>(
+                                    ? products?.map((product)=>(
                                         
-                                        <Row className="d-flex align-items-center justify-content-center borderProduct mb-3 p-2">
+                                        <Row className="d-flex flex-column align-items-center justify-content-center borderProduct mb-3 p-2">
 
-                                            <Col xs={12} sm={12} md={12} lg={3} className="d-flex justify-content-center mb-3">
+                                            <Col xs={12} sm={12} md={12} lg={12} className="d-flex justify-content-center mb-3">
                                                 <div className="productPicture"><img src={product.image} alt="Imagen del producto" className="productPicture" /></div>
                                             </Col>
 
@@ -44,13 +42,13 @@ export const BuyCard = ({date,status,products, pictures, price}) => {
 
 
                                                     <Col xs={12} sm={12} md={12} lg={12}>
-                                                    <div className="productReference d-flex flex-row mb-1">Número de referencia: <p className="ms-3 textBold">{product.reference}</p></div>
+                                                    <div className="productReference d-flex flex-row justify-content-around mb-1">Número de referencia: <p className="ms-3 textBold">{product.reference}</p></div>
                                                     </Col>
                                                     <Col  xs={12} sm={12} md={12} lg={12}>
-                                                    <div className="productName d-flex flex-row mb-1">Nombre del producto: <p className="ms-3 textBold">{product.name}</p></div>
+                                                    <div className="productName d-flex flex-row justify-content-around mb-1">Nombre del producto: <p className="ms-3 textBold">{product.name}</p></div>
                                                     </Col>
                                                     <Col  xs={12} sm={12} md={12} lg={12} >
-                                                    <div className="productPrice d-flex flex-row mb-1">Precio: <p className="ms-3 textBold">{product.price}€</p></div>
+                                                    <div className="productPrice d-flex flex-row justify-content-around mb-1">Precio: <p className="ms-3 textBold">{product.price}€</p></div>
                                                     </Col>
 
                                                 </Row>

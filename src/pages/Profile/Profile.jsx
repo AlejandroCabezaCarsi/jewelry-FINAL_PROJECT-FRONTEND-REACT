@@ -18,6 +18,10 @@ export const Profile = () => {
 
     const token = dataUser.credentials.token
 
+    const userID = dataUser.dataUser.id
+
+    console.log("USERID " + userID)
+
     //Check if the user 
     
     useEffect(() => {
@@ -30,15 +34,15 @@ export const Profile = () => {
 
     useEffect(()=>{
         if (orders.length === 0){
-            getAllOrdersByUserID(token)
+            getAllOrdersByUserID(token,userID)
                 .then((results) => {
+                    console.log(results)
                     setOrders(results.data.data)
                     
                 })
                 .catch((error) => console.log(error));
         }
 
-        console.log(orders)
     },[orders,token])
 
     return(
@@ -64,14 +68,15 @@ export const Profile = () => {
 
                         ? orders.map((order) =>(
 
-                            <Col key={order.id} xs={12} sm={6} md={6} lg={6}>
+                            <Col key={order.id} xs={12} sm={6} md={6} lg={10}>
                                 <BuyCard 
                                 order={order} 
                                 date={order.date} 
                                 status={order.status_orders.name}
-                                products={order.products.length}
-                                picture={order.picture}
+                                products={order.products}
+                                picture={order.products}
                                 price={order.price}
+                                name={order.name}
                                 />
                             </Col>
                         ))

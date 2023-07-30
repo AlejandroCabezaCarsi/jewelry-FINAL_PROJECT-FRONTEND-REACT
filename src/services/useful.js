@@ -38,6 +38,13 @@ export const checkError = (name, value) => {
         }
       
         return "";
+      case "creditCard":
+        if(!/^(?:\d{13,19})$/.test(value)){
+          return "La tarjeta de crédito debe tener entre 13 y 19 caracteres";
+
+        }
+      
+        return "";
   
       default:
         console.log("Unknown format");

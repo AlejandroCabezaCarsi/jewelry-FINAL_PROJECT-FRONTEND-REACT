@@ -192,6 +192,17 @@ export const getAllProducts = async () => {
   return await axios.get(`${root}getAllProducts`)
 }
 
+export const createOrder = async (token, productIds)=>{
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  return await axios.post(`${root}createOrder`, {"product":productIds}, config);
+
+}
+
 
 
 
