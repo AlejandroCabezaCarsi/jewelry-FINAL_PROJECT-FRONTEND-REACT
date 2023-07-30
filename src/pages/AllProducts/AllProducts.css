@@ -1,7 +1,12 @@
 .allProductsDesign{
     max-width: 100vw;
     min-height: 75vh;
+    background-color: #f8f9fa;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.filterNavbar{
+    background-color: #d8d8d8;
 }

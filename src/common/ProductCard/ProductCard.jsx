@@ -43,7 +43,7 @@ export const ProductCard = ({id, image, name, price }) => {
                 <Row>
                     <Col xs={10} sm={10} md={10} xl={12} className="d-flex justify-content-center align-items-center mb-2">
 
-                        <div className="productCardName">{name}</div>
+                        <div className="productCardName textBold">{name}</div>
                     </Col>
                 </Row>
                 <Row>
@@ -61,7 +61,7 @@ export const ProductCard = ({id, image, name, price }) => {
                                 onClick={handleDecreaseQuantity}>
                             </Col>
                             <Col 
-                            className="d-flex flex-row d-flex flex-row justify-content-center align-items-center" 
+                            className="d-flex flex-row d-flex flex-row justify-content-center align-items-center textBold" 
                             xs={10} sm={10} md={10} xl={4}>
                                 <div className="unitsText d-flex flex-row justify-content-center align-items-center">{cartUnits}</div>Ud.</Col>
                             <Col 

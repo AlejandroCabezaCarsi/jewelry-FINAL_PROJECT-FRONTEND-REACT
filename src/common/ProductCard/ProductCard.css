@@ -1,7 +1,7 @@
 .productCardDesign{
     width: 13em;
     height: auto;
-    background-color: red;
+    background-color: #d8d8d8;
     
 }
 
@@ -9,6 +9,8 @@
     width: 9em;
     height: 9em;
     background-color: white;
+    border: solid black 1px;
+
 }
 
 .productCardName{

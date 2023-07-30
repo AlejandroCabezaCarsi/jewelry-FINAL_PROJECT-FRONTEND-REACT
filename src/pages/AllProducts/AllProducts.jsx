@@ -73,8 +73,8 @@ export const AllProducts = () => {
     return(
         <div className="allProductsDesign">
             <Container>
-                <Row>
-                <Col xs={10} sm={2} md={2} lg={4} className="d-flex justify-content-center mb-3">
+                <Row className="d-flex justify-content-center align-items-center mt-3 filterNavbar p-2">
+                <Col xs={10} sm={2} md={2} lg={4} className="d-flex justify-content-center ">
                                     <select
                                         value={typeSelected}
                                         onChange={handleTypeSelected}
@@ -94,10 +94,10 @@ export const AllProducts = () => {
                                     </select>
 
                                 </Col>
-                                <Col xs={10} sm={2} md={2} lg={4} className="d-flex justify-content-center mb-3">
-                                    <input type="text" value={name} onChange={handleName}/>
+                                <Col xs={10} sm={2} md={2} lg={4} className="d-flex justify-content-center align-items-center">
+                                    <input placeholder="Buscar..." type="text" value={name} onChange={handleName} className="text-center"/>
                                 </Col>
-                                <Col xs={10} sm={2} md={2} lg={4} className="d-flex justify-content-center">
+                                <Col xs={10} sm={2} md={2} lg={4} className="d-flex justify-content-center align-items-center">
                                     <input type="checkbox" checked={diamonds} onChange={handleDiamonds}/>
                                     <div className="checkboxText ms-2">Solo artículos con diamantes</div>
                                 </Col>
