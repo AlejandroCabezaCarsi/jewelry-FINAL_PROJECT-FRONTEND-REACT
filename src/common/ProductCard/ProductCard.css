@@ -35,6 +35,8 @@
     background-image: url("../../assets/plusButton.png") ;
     background-size: contain;
     cursor: pointer;
+    background-repeat: no-repeat;
+
 }
 
 .unitsText{
@@ -50,6 +52,7 @@
     background-image: url("../../assets/minusButton.png");
     background-size: contain;
     cursor: pointer;
+    background-repeat: no-repeat;
 }
 
 

@@ -21,16 +21,16 @@ export const CartProductCard = ({id, image,name, price, quantity}) => {
       };
 
     return(
-        <div className="cartProductCarcDesign d-flex align-items-center h-100 p-3">
+        <div className="cartProductCarcDesign d-flex align-items-center h-100 p-3 mt-4 mb-4 ">
             <Container>
                 <Row className="d-flex flex-row">
-                    <Col  xs={12} sm={12} md={5} lg={5} className="d-flex align-items-center">
+                    <Col  xs={12} sm={12} md={5} lg={5} className="d-flex align-items-center justify-content-center">
                         <img src={image}className="cartProductCardPicture"/>
                     </Col>
 
                     <Col>
                         <Row className="d-flex justify-content-around align-items-center ">
-                            <Col  xs={12} sm={12} md={12} lg={12} className="mb-4">
+                            <Col  xs={12} sm={12} md={12} lg={12} className="mb-4 mt-3">
                             <div className="">{name}</div>
                             </Col>
                             <Col  xs={12} sm={12} md={12} lg={12} className="mb-4">                        
@@ -44,15 +44,16 @@ export const CartProductCard = ({id, image,name, price, quantity}) => {
                     </Col> 
                 </Row>
                 <Row className="d-flex justify-content-between align-items-center">
-                    <Col  xs={5} sm={3} md={3} lg={5}className="d-flex align-items-center mb-2 mt-3">
+                    <Col  xs={6} sm={3} md={3} lg={5}className="d-flex justify-content-around align-items-center mb-2 mt-3">
                         <div className="plusButton" onClick={handleIncreaseQuantity} ></div>
                         <div className="minusButton"onClick={handleDecreaseQuantity}></div>
                         <div className="trashButton" onClick={handleRemoveFromCart}></div>
                     </Col>
-                    <Col xs={3} sm={3} md={3} lg={3}>
-                        <div className="totalPrice">Total:{price*quantity}</div>
+                    <Col xs={6} sm={3} md={3} lg={3} className="d-flex flex-row justify-content-end">
+                        <div className="totalPrice">Total: <div>{price*quantity}€</div></div>
                     </Col>
                 </Row>
+
             </Container>
         </div>
     )

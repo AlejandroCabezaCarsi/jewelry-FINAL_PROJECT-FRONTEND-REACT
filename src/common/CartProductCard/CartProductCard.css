@@ -15,4 +15,19 @@
     width: 2em;
     background-image: url(../../assets/trashButton.png);
     background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.payButton {
+    background-color: black;
+    color: white;
+    
+}
+
+.borderCart{
+    border: solid black 0.1em;
+    min-height: 30vh;
+    min-width: 90vw;
+
 }

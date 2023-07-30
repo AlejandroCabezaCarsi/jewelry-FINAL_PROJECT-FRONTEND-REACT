@@ -4,51 +4,81 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { cartInfo } from "../AllProducts/cartSlice";
 import { CartProductCard } from "../../common/CartProductCard/CartProductCard";
+import { useNavigate } from "react-router-dom";
 
 export const Cart = () => {
+
+    const navigate = useNavigate()
 
     const products = useSelector(cartInfo)
 
     console.log(products)
+    
+    const total = products.reduce((accumulator, product) => accumulator + (product.price * product.quantity), 0);
+
+    const travelToPay = () =>{
+
+
+    }
 
     return(
         <div className="cartDesign">
-            <Container>
+            
+            <Container className="d-flex justify-content-center align-items-center">
+
                 <div className="cartContent d-flex flex-column justify-content-center align-items-center mt-3">
                     <Row>
+
                         <Col>
                             <div className="cartTitle">ARTICULOS EN EL CARRITO</div>
                         </Col>
                     </Row>
 
-                    <Row>
-                        <Col>
+                    <Row className="m-2 d-flex align-items-center  mb-5">
+                        <Col className="d-flex flex-column align-items-center">
                             
-                                <Row>
-
-                                    {products.length > 0 
-                                    
-                                        ? products.map((product)=>(
-                                            <Col key={product.id}>
-                                                <CartProductCard
-                                                id={product.id}
-                                                image={product.image}
-                                                name={product.name}
-                                                price={product.price}
-                                                quantity={product.quantity}
-                                                />
-                                            </Col>
-                                        ))
-
-                                        :null
-                                    
-                                    }
-                                    
-                                </Row>
-                            
+                            <Row className="d-flex justify-content-center align-items-center borderCart">
+                                {console.log(products.length)}
+                                {products.length > 0                                 
+                                    ? products.map((product)=>(
+                                        <Col key={product.id}
+                                             xs={10} 
+                                             sm={12} 
+                                             md={7} 
+                                             lg={product.length > 2  ? 4 : 7}>
+                                            <CartProductCard
+                                            id={product.id}
+                                            image={product.image}
+                                            name={product.name}
+                                            price={product.price}
+                                            quantity={product.quantity}
+                                            />
+                                        </Col>
+                                    ))
+                                    : null                                
+                                }                                
+                            </Row>
                         </Col>
+                        <Container fluid className="d-flex justify-content-end">
+                            <Row className="d-flex align-items-end justify-content-center">
+                                <Col>
+
+                                     {products.length === 0 
+                                     
+                                        ? null
+                                        : <div className="payButton p-2 m-2" onClick={()=>travelToPay()}>PAGAR: {total}€ </div>
+                                     }
+                                   
+                                </Col>
+                            </Row>
+                        </Container>
                     </Row>
                 </div>
+                            
+                            
+                        
+                        
+                    
             </Container>
         </div>
     )
