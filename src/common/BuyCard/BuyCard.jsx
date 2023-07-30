@@ -4,39 +4,40 @@ import { Col, Container, Row } from "react-bootstrap";
 
 export const BuyCard = ({date,status,products, pictures, price}) => {
 
+    const total = products.reduce((accumulator, product) => accumulator + product.price, 0);
+
 
     return (
         <div className="buyCardDesign">
             <Container>
                 <Row className="d-flex flex-row justify-content-around">
-                    <Col xs={7} sm={5} md={5} lg={5}>
-                        <div className="buyDate">{date}</div>
+                    <Col xs={12} sm={5} md={5} lg={5} className="d-flex flex-column">
+                        
+                        <div className="buyDate">Fecha: <p className=" ms-1 m-0 p-0 textBold textSize ">{date}</p></div>
+                        <div className="numberOfProducts">Productos: <p className=" ms-1 m-0 p-0 textBold textSize ">{products?.length}</p></div>
+
                     </Col>
-                    <Col xs={5}sm={4} md={4} lg={4}>
-                        <div className="statusBuy">{status}</div>
+                    <Col xs={12}sm={4} md={4} lg={4}>
+                        <div className="statusBuy">Estado del pedido: <p className=" ms-1 m-0 p-0 textBold textSize ">{status}</p></div>
                     </Col>
                 </Row>
 
-                <Row>
-                    <Col>
-                        <div className="numberOfProducts">Productos: {products?.length}</div>
-                    </Col>
-                </Row>
-
-                <div className="space"></div>
-        
                 <Row className="d-flex justify-content-center">
+                
+                </Row>
+        
+                <Row className="d-flex justify-content-center mt-3">
                     <Col xs={11} sm={11} md={11} lg={11}>                          
                             {   products
                                     ? products?.map((product)=>(
                                         
-                                        <Row className="d-flex flex-column align-items-center justify-content-center borderProduct mb-3 p-2">
+                                        <Row className="d-flex flex-row align-items-center justify-content-center borderProduct mb-3 p-2">
 
-                                            <Col xs={12} sm={12} md={12} lg={12} className="d-flex justify-content-center mb-3">
+                                            <Col xs={12} sm={12} md={12} lg={3} className="d-flex justify-content-center mb-3">
                                                 <div className="productPicture"><img src={product.image} alt="Imagen del producto" className="productPicture" /></div>
                                             </Col>
 
-                                            <Col xs={12} sm={5} md={5} lg={9}>
+                                            <Col xs={12} sm={5} md={5} lg={6}>
 
                                                 <Row className="d-flex justify-content-center align-items-center ">
 
@@ -65,7 +66,7 @@ export const BuyCard = ({date,status,products, pictures, price}) => {
                 <Row>
                     <Col>
                         <div className="price">TOTAL:
-                            <div className="priceFont ms-2 textBold">{price}€</div>
+                            <div className="priceFont ms-2 textBold">{total}€</div>
                         </div>
                     </Col>
                 </Row>

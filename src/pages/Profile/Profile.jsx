@@ -20,7 +20,6 @@ export const Profile = () => {
 
     const userID = dataUser.dataUser.id
 
-    console.log("USERID " + userID)
 
     //Check if the user 
     
@@ -31,6 +30,9 @@ export const Profile = () => {
     }, [role_ID, navigate]);
 
     const [orders, setOrders] = useState([])
+
+    console.log(orders)
+
 
     useEffect(()=>{
         if (orders.length === 0){
