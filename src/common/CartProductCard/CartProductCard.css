@@ -1,0 +1,18 @@
+.cartProductCarcDesign{
+
+    width: auto;
+    background-color: red;
+}
+
+.cartProductCardPicture{
+    height: 8em;
+    width: 8em;
+    background-color: white;
+}
+
+.trashButton{
+    height: 2em;
+    width: 2em;
+    background-image: url(../../assets/trashButton.png);
+    background-size: contain;
+}
