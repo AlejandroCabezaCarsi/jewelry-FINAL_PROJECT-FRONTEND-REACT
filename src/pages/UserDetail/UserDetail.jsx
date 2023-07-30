@@ -20,11 +20,9 @@ export const UserDetail = () => {
 
     let {id} = useParams()
 
-    console.log(id)
-
-    // if (role > 2 ){
-    //     navigate("/")
-    // }
+    if (userRole > 2 ){
+        navigate("/")
+    }
 
     const [userDataBackend, setUserDataBackend] = useState([])
 
@@ -38,16 +36,12 @@ export const UserDetail = () => {
         if (id && userDataBackend.length === 0){
             getOneDeletedUserByID(token,{id})
             .then((response)=>{
-                console.log(response)
                 setUserDataBackend(response.data.data)
                 if(response.data.data.length === 0){
-                  
-                        console.log("ENTRO?")
-                
+                                  
                         getUserDataByID(token, id)
     
                         .then((response)=>{
-                            console.log(response)
                         setUserDataBackend(response.data.data)
                     })
                     .catch((error) => {
@@ -64,7 +58,6 @@ export const UserDetail = () => {
                 console.log('Error retrieving orders', error);})
             }
             
-            console.log(userDataBackend)
     }, [id])
 
       
@@ -81,7 +74,6 @@ export const UserDetail = () => {
                 .catch((error) => {
                     console.log('Error retrieving orders', error);})}
         
-            console.log(orders?.products)
     },[id])
 
     return(

@@ -1,5 +1,7 @@
 .footerDesign{
     height: 10vh;
     max-width: 100vw;
-    background-color: rgb(255, 0, 0);
+    background-color: black;
+    color: white;
+    overflow: auto;
 }

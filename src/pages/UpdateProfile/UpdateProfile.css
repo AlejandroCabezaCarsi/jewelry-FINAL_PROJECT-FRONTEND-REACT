@@ -32,6 +32,10 @@
     font-size: xx-large;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+.backProfile{
+    cursor: pointer;
+    color: blue;
+}
 
 @keyframes shake {
     0% { transform: translateX(0); }

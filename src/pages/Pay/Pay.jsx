@@ -7,9 +7,12 @@ import { useSelector } from "react-redux";
 import { cartInfo } from "../AllProducts/cartSlice";
 import { userData } from "../Login/userSlice";
 import { createOrder } from "../../services/apicalls";
+import { useNavigate } from "react-router-dom";
 
 
 export const Pay = () => {
+
+    const navigate = useNavigate()
 
     const [credentialsError, setCredentialsError] = useState({
         creditCardError: "",
@@ -37,7 +40,6 @@ export const Pay = () => {
 
     const token = dataUser.credentials.token
 
-    console.log(token)
     const products = useSelector(cartInfo) 
 
     const total = products.reduce((accumulator, product) => accumulator + (product.price * product.quantity), 0);
@@ -48,7 +50,7 @@ export const Pay = () => {
 
         createOrder(token, productIds)
             .then((response)=>{
-                console.log(response)
+                navigate("/Profile")
             })
 
     }

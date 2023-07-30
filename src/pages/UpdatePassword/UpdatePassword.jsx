@@ -108,7 +108,8 @@ export const UpdatePassword = () => {
   };
 
   return (
-    <div className="updatePasswordDesign">
+    <div className="updatePasswordDesign d-flex flex-column">
+            <div className="backProfile" onClick={()=>navigate("/Profile")}>Volver a mi perfil</div>
       <Container className="d-flex justify-content-center align-items-center">
         <div className="updatePasswordForm">
           <Row>

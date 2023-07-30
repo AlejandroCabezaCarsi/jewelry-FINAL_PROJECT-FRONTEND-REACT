@@ -109,8 +109,11 @@ export const UpdateProfile = () => {
   };
 
   return (
-    <div className="updateProfileDesign">
+    <div className="updateProfileDesign d-flex flex-column">
+      <div className="backProfile" onClick={()=>navigate("/Profile")}>Volver a mi perfil</div>
+      
       <Container className="d-flex flex-column align-items-center borderUpdate">
+        
         <div className="updateForm p-4">
           <Row>
             <Col

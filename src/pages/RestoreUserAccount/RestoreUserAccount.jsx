@@ -12,7 +12,6 @@ export const RestoreUserAccount = () => {
 
     let {id} = useParams()
 
-    console.log(id)
 
     const dataUser = useSelector(userData)
 
@@ -33,7 +32,6 @@ export const RestoreUserAccount = () => {
         if (userDataBackend.length === 0){
             getOneDeletedUserByID(token,{id})
             .then((response)=>{
-                console.log(response)
                 setUserDataBackend(response.data.data)
 
                 if(response.data.data.length === 0){

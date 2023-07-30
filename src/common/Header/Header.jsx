@@ -10,50 +10,52 @@ import { userData } from "../../pages/Login/userSlice";
 import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
+  const dataUser = useSelector(userData);
 
-    const dataUser = useSelector(userData)
+  const token = dataUser.credentials.token;
 
-    const token = dataUser.credentials.token
-
-    console.log(token)
-
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <>
-        <Navbar expand="lg" className="bg-body-tertiary">
-            <Container>
-                <div className="jewlryLogo" onClick={()=>navigate("/")}></div>
-                <Navbar.Brand href="/">Joyería Sylvie</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto d-flex align-items-center">
-                        <div className="navLinksLeft d-flex">
-                            <Nav.Link className="p-4" href="/AllProducts">Productos</Nav.Link>
-                            
-                        </div>
-                    </Nav>
+      <Navbar expand="lg" className="bg-body-tertiary">
+        <Container>
+          <div className="jewlryLogo" onClick={() => navigate("/")}></div>
+          <Navbar.Brand href="/">Joyería Sylvie</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto d-flex align-items-center">
+              <div className="navLinksLeft d-flex">
+                <Nav.Link className="p-4" href="/AllProducts">
+                  Productos
+                </Nav.Link>
+              </div>
+            </Nav>
 
-                    <Nav>
+            <Nav>
+              {token !== "" ? (
+                <div className="navLinksRight">
+                  <div
+                    className="profileButton p-3"
+                    onClick={() => navigate("/Profile")}
+                  ></div>
 
-
-                        {token !== ""
-                        
-                            ?   <div className="navLinksRight">
-                                    <div className="profileButton p-3" onClick={()=> navigate("/Profile")}></div>
-                                </div>
-
-                            :   <div className="navLinksRight">
-                                    <div className="PRUEBA p-3"><ChangeViewButton name={"Login"} path={"/Login"} /></div>
-                                </div>
-                        
-                        }
-                        
-                    </Nav>
-
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+                  <div
+                    className="cartButton p-3  ms-3"
+                    onClick={() => navigate("/Cart")}
+                  ></div>
+                </div>
+              ) : (
+                <div className="navLinksRight">
+                  <div className="PRUEBA p-3">
+                    <ChangeViewButton name={"Login"} path={"/Login"} />
+                  </div>
+                </div>
+              )}
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </>
   );
 };

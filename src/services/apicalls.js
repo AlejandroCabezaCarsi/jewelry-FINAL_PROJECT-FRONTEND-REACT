@@ -124,7 +124,6 @@ export const restoreUser = async (token, id) => {
     },
   }
 
-  console.log(config)
 
   return await axios.post(`${root}restoreAccount`, {id:id}, config)
 
@@ -152,23 +151,7 @@ export const getOneDeletedUserByID = async (token, id) => {
 
   return await axios.post(`${root}getOneDeletedUserByID`, {id:id}, config)
 }
-// export const destroyUser = async (token, id) => {
 
-//   const config = {
-      
-//     headers: {
-//       Authorization: `Bearer ${token}`,
-//     },
-//   }
-
-//   const userID = id
-
-//   console.log(token)
-//   console.log(config)
-//   console.log(userID)
-
-//   return await axios.delete(`${root}destroyUser`, userID, config)
-// }
 
 export const destroyUser = async (token, id) => {
   const config = {
@@ -177,11 +160,9 @@ export const destroyUser = async (token, id) => {
     },
   };
 
-  const data = { id: id }; // Datos que deseas enviar en el cuerpo de la solicitud
+  const data = { id: id }; 
 
-  console.log(token);
-  console.log(config);
-  console.log(data);
+
 
   return await axios.delete(`${root}destroyUser`, { data: data, ...config });
 };
@@ -210,8 +191,6 @@ export const getAllTypes = async () => {
 
 export const getAllProductsFiltered = async (typeSelected, name, diamonds ) => {
 
-  console.log(typeSelected)
-  console.log(diamonds)
 
   const data ={
     typeSelected,

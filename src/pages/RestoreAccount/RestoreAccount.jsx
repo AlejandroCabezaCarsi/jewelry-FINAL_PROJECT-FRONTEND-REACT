@@ -23,8 +23,6 @@ export const RestoreAccount = () => {
     }
   
     const [email, setEmail] = useState("");
-    console.log(email)
-    console.log(token)
     
     const [emailError, setEmailError] = useState({
       emailError: "",
@@ -33,7 +31,6 @@ export const RestoreAccount = () => {
    
     const [errorMessage, setErrorMessage] = useState("");
 
-    console.log(errorMessage)
   
     const [successMessage, setSuccessMessage] = useState("");
   
@@ -59,7 +56,6 @@ export const RestoreAccount = () => {
     const restoreUserByEmail = () =>{
         restoreUser(token, email)
             .then((response)=>{
-                console.log(response)
             })
     }
 

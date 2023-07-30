@@ -1,13 +1,13 @@
 .cartProductCarcDesign{
 
     width: auto;
-    background-color: red;
+    background-color: #d8d8d8;
 }
 
 .cartProductCardPicture{
     height: 8em;
     width: 8em;
-    background-color: white;
+    border: solid black 1px;
 }
 
 .trashButton{
@@ -22,6 +22,7 @@
 .payButton {
     background-color: black;
     color: white;
+    cursor: pointer;
     
 }
 

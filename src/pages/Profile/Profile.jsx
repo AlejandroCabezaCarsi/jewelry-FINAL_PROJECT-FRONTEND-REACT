@@ -31,14 +31,11 @@ export const Profile = () => {
 
     const [orders, setOrders] = useState([])
 
-    console.log(orders)
-
 
     useEffect(()=>{
         if (orders.length === 0){
             getAllOrdersByUserID(token,userID)
                 .then((results) => {
-                    console.log(results)
                     setOrders(results.data.data)
                     
                 })

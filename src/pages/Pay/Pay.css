@@ -4,6 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f8f9fa;
+
 }
 
 .createOrderButton{
@@ -18,5 +20,6 @@
     border: solid black 0.1em;
     width: fit-content;
     height: fit-content;
+    background-color: #d8d8d8;
     
 }
