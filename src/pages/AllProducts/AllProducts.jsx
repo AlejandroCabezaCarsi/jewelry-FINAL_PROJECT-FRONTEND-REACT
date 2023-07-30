@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./AllProducts.css";
 import { ProductCard } from "../../common/ProductCard/ProductCard";
 import { Col, Container, Row } from "react-bootstrap";
-import { getAllProducts } from "../../services/apicalls";
+import { getAllProducts, getAllProductsFiltered, getAllTypes } from "../../services/apicalls";
 
 export const AllProducts = () => {
 
@@ -17,9 +17,91 @@ export const AllProducts = () => {
         }
     },[products])
 
+    const [types, setTypes] = useState([])
+    
+    useEffect(()=>{
+        getAllTypes()
+            .then((response)=>{
+                setTypes(response.data.data)
+            })
+    },[types, products])
+
+    const [typeSelected, setTypeSelected] = useState("")
+
+    const handleTypeSelected = (event) => {
+        setTypeSelected(event.target.value)
+    }
+
+    const [name, setName] = useState("")
+    
+    const handleName = (event) => {
+        setName(event.target.value)
+    }
+
+    const [diamonds, setDiamonds] = useState(false)
+
+    const handleDiamonds = () => {
+        setDiamonds((prevState) => !prevState);
+    };
+      useEffect(()=>{
+        
+        if (typeSelected != "" || name != "" || diamonds !== false){
+            
+            const bring = setTimeout(() => {
+                
+                getAllProductsFiltered( typeSelected, name, diamonds)
+                    .then((response)=>{
+                        setProducts(response.data.data)
+                    })
+                    .catch((error) => console.log(error));
+                }, 350);
+
+                return() => clearTimeout(bring)
+
+            } 
+        else {
+                getAllProducts()
+                    .then((results)=>{
+                        setProducts(results.data.data)
+                    })
+                    .catch((error) => console.log(error));
+        }
+                
+    },[typeSelected, name, diamonds])
+
+
     return(
         <div className="allProductsDesign">
             <Container>
+                <Row>
+                <Col xs={10} sm={2} md={2} lg={4} className="d-flex justify-content-center mb-3">
+                                    <select
+                                        value={typeSelected}
+                                        onChange={handleTypeSelected}
+                                    >
+
+                                        <option value="">Filtrar por tipo</option>
+                                        {types.length > 0
+                                        
+                                        ? types.map((type)=>(
+                                            <option key={type.id} value={type.id}>
+                                                {type.name}
+                                            </option>
+                                        ))
+                                        : null
+                                        }
+
+                                    </select>
+
+                                </Col>
+                                <Col xs={10} sm={2} md={2} lg={4} className="d-flex justify-content-center mb-3">
+                                    <input type="text" value={name} onChange={handleName}/>
+                                </Col>
+                                <Col xs={10} sm={2} md={2} lg={4} className="d-flex justify-content-center">
+                                    <input type="checkbox" checked={diamonds} onChange={handleDiamonds}/>
+                                    <div className="checkboxText ms-2">Solo artículos con diamantes</div>
+                                </Col>
+                </Row>
                 <Row className="d-flex justify-content-around align-items-center">
                     {products.length > 0
 

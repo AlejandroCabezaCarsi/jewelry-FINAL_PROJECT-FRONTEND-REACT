@@ -203,7 +203,26 @@ export const createOrder = async (token, productIds)=>{
 
 }
 
+export const getAllTypes = async () => {
 
+  return await axios.get(`${root}getAllTypes`)
+}
+
+export const getAllProductsFiltered = async (typeSelected, name, diamonds ) => {
+
+  console.log(typeSelected)
+  console.log(diamonds)
+
+  const data ={
+    typeSelected,
+    name,
+    diamonds
+  
+  }
+
+  return await axios.post(`${root}getAllProductsFiltered`, data)
+
+}
 
 
 
