@@ -1,7 +1,7 @@
 .userCardDesign {
     height: fit-content;
     width: 12em;
-    background-color: green;
+    background-color: rgb(255, 184, 102);
     margin: 2em;
 }
 
@@ -10,21 +10,21 @@
 
     height: 1.5em;
     width: 100%;
-    background-color: red;
-    overflow: hidden;    
+    overflow: hidden;   
+    background-color: rgb(233, 172, 103);
+
 }
 
 .userCardStatus{
     height: 1.5em;
     width: 100%;
     border-radius: 2em;
-    background-color: aqua;   
 }
 
 .userCardEmail{
     height: 1.5em;
     width: 100%;
-    background-color: aqua;
+    border: solid black 0.1em;
 }
 
 .fontSize{
@@ -34,6 +34,7 @@
 .viewDetail{
     background-color: black;
     color: white;
+    cursor: pointer;
 }
 
 .scrollIfNeeded{
@@ -44,4 +45,12 @@
 
 .scrollIfNeeded::-webkit-scrollbar {
     display: none;
+}
+
+.activeUser{
+    background-color: rgb(130, 255, 130);
+}
+
+.deletedUser{
+    background-color: red;
 }

@@ -116,10 +116,27 @@ export const AllUsers = () => {
 
             <Container fluid>
                 <Row>
-                    <div className="filterNavbar">
+                    <Col xs={2} sm={2} md={2} lg={2}>                   
+                        <div className="lateralNavbar ">
+                            <Container fluid>
+                                <Row>
+                                    <Col sm={2} md={2} lg={2}>                    
+                                        <UserLateralNavbar/>
+                                    </Col>   
+                                </Row>
+                            </Container>
+                        </div>
+                    </Col>
+                    <Col xs={10} sm={10} md={2} lg={10}>                   
+                        <div className="allUsersContent">
+
+                            <Container>
+
+
+                            <div className="filterNavbar">
                         <Container>
-                            <Row className="d-flex justify-content-end">
-                                <Col sm={2} md={2} lg={2}>
+                            <Row className="d-flex align-items-center justify-content-center">
+                                <Col xs={10} sm={2} md={2} lg={4} className="d-flex justify-content-center mb-3">
                                     <select
                                         value={roleSelected}
                                         onChange={handleRoleSelected}
@@ -139,33 +156,16 @@ export const AllUsers = () => {
                                     </select>
 
                                 </Col>
-                                <Col sm={2} md={2} lg={2}>
+                                <Col xs={10} sm={2} md={2} lg={4} className="d-flex justify-content-center mb-3">
                                     <input type="text" value={nameOrEmail} onChange={handleNameOrEmail}/>
                                 </Col>
-                                <Col sm={2} md={2} lg={3} className="d-flex justify-content-center">
+                                <Col xs={10} sm={2} md={2} lg={4} className="d-flex justify-content-center">
                                     <input type="checkbox" checked={deleted_at} onChange={handleDeleted_at}/>
                                     <div className="checkboxText ms-2">Solo usuarios inactivos</div>
                                 </Col>
                             </Row>
                         </Container>
                     </div>
-                </Row>
-                <Row>
-                    <Col  sm={2} md={2} lg={3}>                   
-                        <div className="lateralNavbar ">
-                            <Container fluid>
-                                <Row>
-                                    <Col sm={2} md={2} lg={2}>                    
-                                        <UserLateralNavbar/>
-                                    </Col>   
-                                </Row>
-                            </Container>
-                        </div>
-                    </Col>
-                    <Col>                   
-                        <div className="allUsersContent">
-
-                            <Container>
                                 <Row>
 
                                     {users.length > 0
