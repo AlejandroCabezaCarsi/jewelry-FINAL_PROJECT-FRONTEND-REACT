@@ -68,7 +68,7 @@ export const UserCardDetail = ({role, deleted_at, email, name, surname, id, crea
 
                         ? null
                         : <Col xs={3} sm={3} md={3} lg={3} className="d-flex justify-content-center align-items-center" onClick={()=>navigate(`/RestoreUserAccount/${id}`)}>
-                                <div className="restoreAccount buttonUserCardDetail">Habilitar cuenta</div>                        
+                                <div className="restoreAccount buttonUserCardDetail">REACTIVAR CUENTA</div>                        
                         
                             </Col>
                     }

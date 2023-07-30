@@ -132,6 +132,7 @@ export const UserDetail = () => {
                             <Row className="d-flex justify-content-center">
                                 <Col xs={12} sm={9} md={9} lg={9} className="text-center mb-3">
                                     <div className="userDetailOrdersTitle">TODAS LAS COMPRAS DEL USUARIO</div>
+                                    <div className="space"></div>
                                 </Col>
                             </Row>
 

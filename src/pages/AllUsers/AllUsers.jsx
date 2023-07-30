@@ -115,7 +115,7 @@ export const AllUsers = () => {
         <div className="allUsersDesign">
 
             <Container fluid>
-                <Row>
+                <Row className="d-flex justify-content-between">
                     <Col xs={2} sm={2} md={2} lg={2}>                   
                         <div className="lateralNavbar ">
                             <Container fluid>
@@ -127,7 +127,7 @@ export const AllUsers = () => {
                             </Container>
                         </div>
                     </Col>
-                    <Col xs={10} sm={10} md={2} lg={10}>                   
+                    <Col xs={10} sm={10} md={9} lg={9}>                   
                         <div className="allUsersContent">
 
                             <Container>

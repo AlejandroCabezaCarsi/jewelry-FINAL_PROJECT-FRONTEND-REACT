@@ -1,17 +1,30 @@
 .userCardDetailDesign{
     height: fit-content;
     width: 100%;
-    background-color: green;
+    background-color: rgb(255, 184, 102);
     margin: 2em;
 }
 
 .buttonUserCardDetail{
     height: max-content;
     width: max-content;
-    background-color: chartreuse;
     padding: 0.5em;
+    cursor: pointer;
 }
 
 .fontSize{
     font-size: medium;
+}
+
+.userCardStatus{
+    background-color: rgb(233, 172, 103);
+}
+
+.deleteAccount{
+    background-color: rgb(255, 79, 79);
+
+}
+
+.restoreAccount{
+    background-color: rgb(90, 255, 84);
 }

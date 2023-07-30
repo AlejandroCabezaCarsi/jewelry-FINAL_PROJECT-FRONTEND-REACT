@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: start;
+    
 }
 
 .sendDeleteData{
@@ -14,9 +15,24 @@
 }
 
 .destroyUserButton{
-    background-color: green;
+    background-color: red;
+    color: white;
+    cursor: pointer;
 }
 
 .returnDeleteButton{
-    background-color: red;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+
+}
+
+.destroyAccountForm{
+    width: fit-content;
+    height: fit-content;
+    border: solid black 0.1em;
+}
+
+.redText{
+    color: red;
 }

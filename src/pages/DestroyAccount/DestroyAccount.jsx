@@ -4,7 +4,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { userData } from "../Login/userSlice";
-import { destroyUser, getOneDeletedUserByID } from "../../services/apicalls";
+import { destroyUser, getOneDeletedUserByID, getUserDataByID } from "../../services/apicalls";
 import { InputText } from "../../common/InputText/InputText";
 import { checkError } from "../../services/useful";
 
@@ -108,24 +108,25 @@ export const DestroyAccount = () => {
     return(
         <div className="destroyAccountDesign">
             <Container  fluid className="d-flex justify-content-center align-items-center">
-            <div className="destroyAccountForm d-flex flex-column align-items-center"> 
+            <div className="destroyAccountForm d-flex flex-column align-items-center p-5 mb-5"> 
                 <Row>
                     <Col>
-                    <div className="destroyAccountTitle">
+                    <div className="destroyAccountTitle textSize textBold">
                                 ELIMINAR CUENTA
                             </div>
+                            <div className="space"></div>
                     </Col>
                 </Row>
                 <Row className="d-flex flex-row text-center">
                         <Col xs={6} sm={6} md={6} lg={6} >
-                            <div className="sureMessage mt-4">Estás seguro de querer ELIMINAR la cuenta de: </div>
+                            <div className="sureMessage mt-4">Estás seguro de querer <p className="p-0 m-0 redText textBold">ELIMINAR</p> la cuenta de: </div>
                         </Col>
-                        <Col xs={6} sm={6} md={6} lg={6}>
+                        <Col xs={6} sm={6} md={6} lg={6} className="d-flex align-items-center">
                             
                                 {userDataBackend.length > 0
 
                                     ? userDataBackend.map((user)=>(
-                                        <div className="nameAndSurnameRestoreUserAccount mt-4 fontWeight">{user.name}{user.surname}</div>
+                                        <div className="nameAndSurnameRestoreUserAccount mt-4 fontWeight">{user.name}  {user.surname}</div>
                                     ))
                                     : null
                                 }
@@ -137,10 +138,10 @@ export const DestroyAccount = () => {
                         {sure === "" 
                             ?<Row className="d-flex flex-row mt-5">
                                 <Col>
-                                <div className="destroyUserButton" onClick={()=>setSure("seguro")}>ELIMINAR</div>
+                                <div className="destroyUserButton p-2 mb-4" onClick={()=>setSure("seguro")}>ELIMINAR</div>
                                 </Col>
                                 <Col>
-                                    <div className="returnDeleteButton">VOLVER</div>
+                                    <div className="returnDeleteButton p-2">VOLVER</div>
                                 </Col>
                             </Row>
                             : <Row className="d-flex flex-column text-center">
@@ -173,7 +174,7 @@ export const DestroyAccount = () => {
                                     confirmation === ""
 
                                     ? <Col>
-                                        <div className="confirmationEmpty mt-3">↑Escribe ELIMINAR ↑</div>
+                                        <div className="confirmationEmpty mt-3 redText">↑Escribe ELIMINAR ↑</div>
                                         </Col>
                                     :<Col className="mt-5">
                                     <div className="sendDeleteData" 
