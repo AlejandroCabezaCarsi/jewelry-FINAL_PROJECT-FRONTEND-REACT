@@ -46,17 +46,11 @@ export const UserLateralNavbar = () => {
                                 <Col sm={12} md={12}  lg={12} xl={12} className="d-flex flex-column align-items-center text-center mt-2">   
                                     <ChangeViewButtonUserLateralNavbar path={""} name={"Ver pedidos"} />
                                     <div className="space"></div>
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Editar mi perfil"} />
+                                    <ChangeViewButtonUserLateralNavbar path={"/updateProfile"} name={"Editar mi perfil"} />
                                     <div className="space"></div>
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Editar mi contraseña"} />
+                                    <ChangeViewButtonUserLateralNavbar path={"/UpdatePassword"} name={"Editar mi contraseña"} />
                                     <div className="space"></div>
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Lista de usuarios"} />
-                                    <div className="space"></div>
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Lista de trabajadores"} />
-                                    <div className="space"></div>
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Lista de administradores"} />
-                                    <div className="space"></div>
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Crear producto"} />
+                                    <ChangeViewButtonUserLateralNavbar path={"/AllUsers"} name={"Lista de usuarios"} />
                                     <div className="space"></div>
 
                                     <div className="logout" onClick={()=>{handleLogout()}}>
@@ -77,18 +71,13 @@ export const UserLateralNavbar = () => {
                                 <Col sm={12} md={12}  lg={12} xl={12} className="d-flex flex-column align-items-center text-center mt-2">   
                                     <ChangeViewButtonUserLateralNavbar path={""} name={"Ver pedidos"}/>
                                     <div className="space"></div>
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Lista de usuarios"} />
+                                    <ChangeViewButtonUserLateralNavbar path={"/AllUsers"} name={"Lista de usuarios"} />
                                     <div className="space"></div>
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Lista de trabajadores"} />
+                                    <ChangeViewButtonUserLateralNavbar path={"updateProfile"} name={"Editar mi perfil"} />
                                     <div className="space"></div>
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Editar mi perfil"} />
+                                    <ChangeViewButtonUserLateralNavbar path={"/UpdatePassword"} name={"Editar mi contraseña"} />
                                     <div className="space"></div>
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Editar mi contraseña"} />
-                                    <div className="space"></div>
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Crear producto"} />
-                                    <div className="space"></div>
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Habilitar cuenta"} />
-                                    <div className="space"></div>
+
                                     <div className="logout d-flex aling-items-center justify-content-center" onClick={()=>{handleLogout()}}>
                                         <p className="logoutText">Logout</p>
                                         <div className="logoutImg"></div>
@@ -105,13 +94,11 @@ export const UserLateralNavbar = () => {
                         <Container className="d-flex justify-content-center">
                             <Row >
                                 <Col sm={12} md={12}  lg={12} xl={12} className="d-flex flex-column align-items-center text-center mt-2">   
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Lista de pedidos"} />
+                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Ver de pedidos"} />
                                     <div className="space"></div>
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Editar mi perfil"} />
+                                    <ChangeViewButtonUserLateralNavbar path={"/updateProfile"} name={"Editar mi perfil"} />
                                     <div className="space"></div>
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Editar mi contraseña"} />
-                                    <div className="space"></div>
-                                    <ChangeViewButtonUserLateralNavbar path={""} name={"Activar usuario"} />
+                                    <ChangeViewButtonUserLateralNavbar path={"/UpdatePassword"} name={"Editar mi contraseña"} />
                                     <div className="space"></div>
                                     <div className="logout" onClick={()=>{handleLogout()}}>
                                         <p className="logoutText">Logout</p>
