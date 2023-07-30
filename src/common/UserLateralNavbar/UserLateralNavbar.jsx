@@ -54,7 +54,7 @@ export const UserLateralNavbar = () => {
                                     <div className="space"></div>
 
                                     <div className="logout" onClick={()=>{handleLogout()}}>
-                                        <p className="logoutText">Logout</p>
+                                        <p className="logoutText">Cerrar sesión</p>
                                         <div className="logoutImg"></div>
                                     </div>
                                 </Col>
@@ -79,7 +79,7 @@ export const UserLateralNavbar = () => {
                                     <div className="space"></div>
 
                                     <div className="logout d-flex aling-items-center justify-content-center" onClick={()=>{handleLogout()}}>
-                                        <p className="logoutText">Logout</p>
+                                        <p className="logoutText">Cerrar sesión</p>
                                         <div className="logoutImg"></div>
                                     </div>
                                 </Col>
@@ -101,7 +101,7 @@ export const UserLateralNavbar = () => {
                                     <ChangeViewButtonUserLateralNavbar path={"/UpdatePassword"} name={"Editar mi contraseña"} />
                                     <div className="space"></div>
                                     <div className="logout" onClick={()=>{handleLogout()}}>
-                                        <p className="logoutText">Logout</p>
+                                        <p className="logoutText">Cerrar sesión</p>
                                         <div className="logoutImg"></div>
                                     </div>
                                 </Col>
@@ -123,7 +123,7 @@ export const UserLateralNavbar = () => {
                                     <ChangeViewButtonUserLateralNavbar path={"/UpdatePassword"} name={"Editar mi contraseña"} />
                                     <div className="space"></div>
                                     <div className="logout" onClick={()=>{handleLogout()}}>
-                                        <p className="logoutText">Logout</p>
+                                        <p className="logoutText">Cerrar sesión</p>
                                         <div className="logoutImg"></div>
                                     </div>
                                 </Col>

@@ -3,11 +3,11 @@
 .userLateralNavbarDesign{
     width: 19.8vw;
     height: auto;
-    border-radius: 0.4em;
+    border-radius: 0.2em;
     display: flex;
     overflow-y: auto;
     box-sizing: border-box;
-    background-color: grey;
+    background-color: #d9dddb;
     margin-bottom: 1em;
     
 }
@@ -42,6 +42,7 @@
     height: 1em;
     background-image: url("../../assets/logutImg.png");
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 576px) {
