@@ -68,12 +68,12 @@ export const Register = () => {
 
             <Container>
 
-            <div className="registerFormDesign">
+            <div className="registerFormDesign mb-4">
 
               <Row>
                 <Col className="text-center mb-3 mt-4">
                   <div className="registerTitle">
-                    REGISTER
+                    REGISTRO
                   </div>
                 </Col>
               </Row>
@@ -87,13 +87,13 @@ export const Register = () => {
                 md={12}
                 lg={6}
                 xl={6}
-                className="d-flex flex-row justify-content-center"
+                className="d-flex flex-row justify-content-center registerLine"
               >
               
                 <InputText
                   type={"text"}
                   design={"normalInput"}
-                  placeholder={"  Name..."}
+                  placeholder={"  Nombre..."}
                   name={"name"}
                   functionHandler={inputHandler}
                   onBlurFunction={inputCheck}
@@ -111,7 +111,7 @@ export const Register = () => {
                 <InputText
                 type={"text"}
                           design={"normalInput"}
-                          placeholder={"  Surname..."}
+                          placeholder={"  Apellidos..."}
                           name={"surname"}
                           functionHandler={inputHandler}
                           onBlurFunction={inputCheck}
@@ -129,7 +129,7 @@ export const Register = () => {
                 md={12}
                 lg={6}
                 xl={6}
-                className="d-flex flex-column align-items-center"
+                className="d-flex flex-column align-items-center registerLine"
               >
               
                 <InputText
@@ -153,7 +153,7 @@ export const Register = () => {
                 md={12}
                 lg={6}
                 xl={6}
-                className="d-flex flex-row justify-content-center"
+                className="d-flex flex-column align-items-center"
               >
                 <InputText
                 type={"password"}
@@ -162,12 +162,13 @@ export const Register = () => {
                     ? "normalInput"
                     : "normalInput errorInput"
                 }
-                          placeholder={"  Password..."}
+                          placeholder={"  Contraseña..."}
                           name={"password"}
                           functionHandler={inputHandler}
                           onBlurFunction={inputCheck}
                         
                 />
+                <div className="errorText">{credentialsError.passwordError}</div>
                 </Col>
             </Row>
 
@@ -180,13 +181,13 @@ export const Register = () => {
                 md={12}
                 lg={6}
                 xl={6}
-                className="d-flex flex-row justify-content-center"
+                className="d-flex flex-row justify-content-center registerLine"
               >
               
                 <InputText
                   type={"text"}
                   design={"normalInput"}
-                  placeholder={"  City..."}
+                  placeholder={"  Ciudad..."}
                   name={"city"}
                   functionHandler={inputHandler}
                   onBlurFunction={inputCheck}
@@ -204,7 +205,7 @@ export const Register = () => {
                 <InputText
                 type={"text"}
                 design={"normalInput"}
-                          placeholder={"  Postal Code..."}
+                          placeholder={"  Codigo postal..."}
                           name={"postalCode"}
                           functionHandler={inputHandler}
                           onBlurFunction={inputCheck}
@@ -220,13 +221,13 @@ export const Register = () => {
                 md={12}
                 lg={6}
                 xl={6}
-                className="d-flex flex-row justify-content-center"
+                className="d-flex flex-row justify-content-center registerLine"
               >
               
                 <InputText
                   type={"text"}
                   design={"normalInput"}
-                  placeholder={"  Address..."}
+                  placeholder={"  Dirección..."}
                   name={"address"}
                   functionHandler={inputHandler}
                   onBlurFunction={inputCheck}
@@ -247,7 +248,7 @@ export const Register = () => {
                 onClick={credentialsError.emailError || credentialsError.passwordError ? null : registerMe}
                 className={`registerButton ${credentialsError.emailError || credentialsError.passwordError ? 'inactiveButton' : ''}`}
               >
-                Register
+                Registate
               </div>
               {credentialsError.emailError || credentialsError.passwordError ? (
             <div className="registerErrorMessage">

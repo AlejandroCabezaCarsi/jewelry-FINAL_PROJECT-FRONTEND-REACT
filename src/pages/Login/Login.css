@@ -58,3 +58,8 @@
     width: 0em;
   }
 }
+
+.registerLink{
+  color: blue;
+  cursor: pointer;
+}

@@ -7,13 +7,7 @@
     align-items: center;
 }
 
-.registerFormDesign{
 
-    
-    border: solid black 0.2em;
-    border-radius: 0.4em;
-
-}
 
 .registerButton{
         display: flex;
@@ -48,6 +42,10 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.registerLine{
+    border-right: solid black 0.1em;
+}
+
 @keyframes shake {
     0% { transform: translateX(0); }
     10% { transform: translateX(-1em); }
@@ -59,4 +57,10 @@
     80% { transform: translateX(-1em); }
     100% { transform: translateX(0); }
 }
+
+@media screen and (max-width: 992px) {
+    .registerLine{
+        border-right: solid black 0em;
+    }
+  }
 

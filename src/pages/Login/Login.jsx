@@ -65,10 +65,6 @@ export const Login = () => {
               navigate("/");
             }, 3500);
 
-            //---------------------------------------------------------
-            //ARREGLAR WELCOME
-            //---------------------------------------------------------
-
             setWelcome(`Bienvenid@ de nuevo ${userInfo.data.data.name}`);
           })
           .catch((error) => {
@@ -150,6 +146,7 @@ export const Login = () => {
                   <div onClick={() => logMe()} className="botonLogin">
                     Login me!
                   </div>
+                  <div className=" d-flex">Si no tienes cuenta, regístrate <p className="registerLink ms-1" onClick={()=>navigate("/Register")}>aquí</p></div>
 
                   {backendError !== "" ? (
                     <div className="errorBackend">{backendError}</div>
