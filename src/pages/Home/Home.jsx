@@ -16,14 +16,14 @@ export const Home = () => {
       <Container fluid className="d-flex justify-content-center align-items-center">
          <Row>
             <Col  xs={12} sm={12} md={12} lg={12} className="d-flex justify-content-center align-items-center" >
-               <img src="../../src/assets/home1.png" className="bigPicture"/>
+               <div className="bigPicture"> </div>
             </Col>
             <Col xs={12} sm={12} md={12} lg={12} className="d-flex justify-content-center">
 
                <div className="homeCard d-flex justify-content-center align-items-center mt-4" onClick={()=>navigate("/AllProducts")}>
                   <Row className="d-flex justify-content-center">
                      <Col className="d-flex justify-content-center">
-                        <img src="../../src/assets/home2.png" className="smallImage"/>
+                        <div className="smallImage1"></div>
                      </Col>
                      <Col className="d-flex align-items-center justify-content-center text-center">
                         <p>Descubre la nueva temporada de relojes en joyería Sylvie</p>
@@ -40,7 +40,7 @@ export const Home = () => {
                 <p>Registrate gratis para recibir las últimas ofertas</p>
                </Col>
                <Col className="d-flex justify-content-center">
-               <img src="../../src/assets/home3.png" className="smallImage" />
+               <div className="smallImage2"></div>
                </Col>
 
 

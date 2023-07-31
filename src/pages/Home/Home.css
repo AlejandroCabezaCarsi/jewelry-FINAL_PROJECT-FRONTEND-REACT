@@ -20,6 +20,7 @@
 
     width: 80vw;
     height: 50vh;
+    background-image: url(../../assets/home1.png);
 }
 
 .homeCard{
@@ -27,9 +28,15 @@
     width: fit-content;
     cursor: pointer;
 }
-.smallImage{
+.smallImage1{
     width: 30vw;
     height: 40vh;
+    background-image: url(../../assets/home2.png);
+}
+.smallImage2{
+    width: 30vw;
+    height: 40vh;
+    background-image: url(../../assets/home3.png);
 }
 
 @media screen and (max-width: 576px) {
@@ -39,7 +46,11 @@
         height: 25vh;
     }
 
-    .smallImage{
+    .smallImage1{
+        width: 30vw;
+        height: 20vh;
+    }
+    .smallImage2{
         width: 30vw;
         height: 20vh;
     }
