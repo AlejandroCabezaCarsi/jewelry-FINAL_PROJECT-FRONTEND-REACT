@@ -1,10 +1,12 @@
 import axios from "axios";
 
-const root = "http://localhost:8000/api/";
+const root = "https://vercel.com/alejandrocabezacarsi/jewelry-final-project/AbabhFufxVx7BarW3VCEceKyDDJi/api/api/";
 
 export const loginMe = async (credentials) => {
 
-  return await axios.post(`http://localhost:8000/api/login`, credentials);
+  console.log(credentials)
+
+  return await axios.post(`${root}login`, credentials);
   
 };
 
@@ -15,12 +17,12 @@ export const getUserInfoByToken = async (token) => {
       }
     };
   
-    return await axios.get(`http://localhost:8000/api/getUserInfoByToken`, config);
+    return await axios.get(`${root}getUserInfoByToken`, config);
   }
 
 export const register = async (userData) => {
 
-  return await axios.post("http://localhost:8000/api/register", userData)
+  return await axios.post("${root}register", userData)
 
 }
 
