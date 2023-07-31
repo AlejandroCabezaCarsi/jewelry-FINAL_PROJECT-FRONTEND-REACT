@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const root = "https://vercel.com/alejandrocabezacarsi/jewelry-final-project/AbabhFufxVx7BarW3VCEceKyDDJi/api/api/";
+const root = "https://vercel.com/alejandrocabezacarsi/jewelry-final-project/AbabhFufxVx7BarW3VCEceKyDDJi.vercel.app/api/api/";
+
+
 
 export const loginMe = async (credentials) => {
 
