@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const root = "https://vercel.com/alejandrocabezacarsi/jewelry-final-project/AbabhFufxVx7BarW3VCEceKyDDJi.vercel.app/api/api/";
+const root = "https://jewelry-final-project-1aposngto-alejandrocabezacarsi.vercel.app/api/api/";
 
 
 
