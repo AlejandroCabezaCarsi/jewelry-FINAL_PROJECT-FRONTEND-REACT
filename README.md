@@ -82,7 +82,7 @@ Como este proyecto se compone de Backend y Frontend será necesario acceder a la
 
 Para clonar el proyecto seguiremos estos pasos desde la consola de nuestro vsc:
 
-    git clone https://github.com/AlejandroCabezaCarsi/CLINICA_FRONT.git
+    git clone  https://github.com/AlejandroCabezaCarsi/jewelry-FINAL_PROJECT.git
 
 instalaremos las dependencias con:
 
