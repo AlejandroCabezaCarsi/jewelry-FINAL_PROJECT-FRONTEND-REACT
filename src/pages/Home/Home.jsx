@@ -37,7 +37,7 @@ export const Home = () => {
 
                <div className="homeCard d-flex justify-content-center" onClick={()=>navigate("/Register")}>
                <Col className="d-flex align-items-center justify-content-center text-center">
-                <p>Registrate gratis para recibir las últimas ofertas</p>
+                <p className="p-2">Registrate gratis para recibir las últimas ofertas</p>
                </Col>
                <Col className="d-flex justify-content-center">
                <div className="smallImage2"></div>
