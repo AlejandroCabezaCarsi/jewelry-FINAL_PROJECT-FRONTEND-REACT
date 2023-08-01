@@ -69,11 +69,11 @@ export const AllProducts = () => {
       <Container>
         <Row className="d-flex justify-content-center align-items-center mt-3 filterNavbar p-2">
           <Col
-            xs={10}
-            sm={2}
-            md={2}
+            xs={12}
+            sm={12}
+            md={4}
             lg={4}
-            className="d-flex justify-content-center "
+            className="d-flex justify-content-center mb-2"
           >
             <select value={typeSelected} onChange={handleTypeSelected}>
               <option value="">Filtrar por tipo</option>
@@ -87,11 +87,11 @@ export const AllProducts = () => {
             </select>
           </Col>
           <Col
-            xs={10}
-            sm={2}
-            md={2}
+            xs={12}
+            sm={12}
+            md={4}
             lg={4}
-            className="d-flex justify-content-center align-items-center"
+            className="d-flex justify-content-center align-items-center mb-2"
           >
             <input
               placeholder="Buscar..."
@@ -102,11 +102,11 @@ export const AllProducts = () => {
             />
           </Col>
           <Col
-            xs={10}
-            sm={2}
-            md={2}
+            xs={12}
+            sm={12}
+            md={4}
             lg={4}
-            className="d-flex justify-content-center align-items-center"
+            className="d-flex justify-content-center align-items-center mb-2"
           >
             <input
               type="checkbox"

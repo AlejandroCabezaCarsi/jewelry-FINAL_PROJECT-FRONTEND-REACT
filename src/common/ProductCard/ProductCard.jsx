@@ -39,9 +39,9 @@ export const ProductCard = ({ id, image, name, price }) => {
       <Container className="">
         <Row>
           <Col
-            xs={10}
-            sm={10}
-            md={10}
+            xs={12}
+            sm={12}
+            md={12}
             xl={12}
             className="d-flex justify-content-center align-items-center mb-3"
           >
@@ -57,9 +57,9 @@ export const ProductCard = ({ id, image, name, price }) => {
 
         <Row>
           <Col
-            xs={10}
-            sm={10}
-            md={10}
+            xs={12}
+            sm={12}
+            md={12}
             xl={12}
             className="d-flex justify-content-center align-items-center mb-2"
           >
@@ -68,9 +68,9 @@ export const ProductCard = ({ id, image, name, price }) => {
         </Row>
         <Row>
           <Col
-            xs={10}
-            sm={10}
-            md={10}
+            xs={12}
+            sm={12}
+            md={12}
             xl={12}
             className="d-flex justify-content-center align-items-center mb-3"
           >
@@ -80,26 +80,26 @@ export const ProductCard = ({ id, image, name, price }) => {
         {showOptions ? (
           <Row>
             <Col
-              xs={10}
-              sm={10}
-              md={10}
+              xs={12}
+              sm={12}
+              md={12}
               xl={12}
               className="d-flex justify-content-center align-items-center"
             >
               <Row className="cartOptions d-flex flex-row justify-content-around">
                 <Col
                   className="minusButton d-flex justify-content-center align-items-center"
-                  xs={10}
-                  sm={10}
-                  md={10}
+                  xs={4}
+                  sm={4}
+                  md={4}
                   xl={4}
                   onClick={handleDecreaseQuantity}
                 ></Col>
                 <Col
                   className="d-flex flex-row d-flex flex-row justify-content-center align-items-center textBold"
-                  xs={10}
-                  sm={10}
-                  md={10}
+                  xs={4}
+                  sm={4}
+                  md={4}
                   xl={4}
                 >
                   <div className="unitsText d-flex flex-row justify-content-center align-items-center">
@@ -109,9 +109,9 @@ export const ProductCard = ({ id, image, name, price }) => {
                 </Col>
                 <Col
                   className=" plusButton d-flex justify-content-center align-items-center"
-                  xs={10}
-                  sm={10}
-                  md={10}
+                  xs={4}
+                  sm={4}
+                  md={4}
                   xl={4}
                   onClick={handleIncreaseQuantity}
                 ></Col>
@@ -121,9 +121,9 @@ export const ProductCard = ({ id, image, name, price }) => {
         ) : (
           <Row>
             <Col
-              xs={10}
-              sm={10}
-              md={10}
+              xs={12}
+              sm={12}
+              md={12}
               xl={12}
               className="d-flex justify-content-center align-items-center"
             >
