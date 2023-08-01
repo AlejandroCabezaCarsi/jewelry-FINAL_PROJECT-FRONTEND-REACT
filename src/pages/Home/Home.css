@@ -18,31 +18,35 @@
 
 .bigPicture{
 
-    width: 80vw;
+    width: 50vw;
     height: 50vh;
     background-image: url(../../assets/home1.png);
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 .homeCard{
     background-color: #d8d8d8;
-    width: fit-content;
+    width: auto;
     cursor: pointer;
+    height: auto;
 }
 .smallImage1{
-    width: 30vw;
-    height: 40vh;
+    width: 25vw;
+    height: 35vh;
     background-image: url(../../assets/home2.png);
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
 }
 .smallImage2{
-    width: 30vw;
-    height: 40vh;
+    width: 25vw;
+    height: 30vh;
     background-image: url(../../assets/home3.png);
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 @media screen and (max-width: 576px) {
