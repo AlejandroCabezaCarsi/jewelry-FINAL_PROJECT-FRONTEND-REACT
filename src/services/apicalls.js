@@ -22,9 +22,11 @@ export const getUserInfoByToken = async (token) => {
     return await axios.get(`${root}getUserInfoByToken`, config);
   }
 
-export const register = async (userData) => {
+export const registerUser = async (userData) => {
 
-  return await axios.post("${root}register", userData)
+  console.log(userData)
+
+  return await axios.post(`https://jewelry-final-project-1aposngto-alejandrocabezacarsi.vercel.app/api/api/register`, userData)
 
 }
 

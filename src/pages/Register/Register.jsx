@@ -3,8 +3,10 @@ import "./Register.css";
 import { InputText } from "../../common/InputText/InputText";
 import { Container, Row, Col } from "react-bootstrap";
 import { checkError } from "../../services/useful";
-import { register } from "../../services/apicalls";
+import { registerUser } from "../../services/apicalls";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../Login/userSlice";
 
 export const Register = () => {
 
@@ -45,20 +47,33 @@ export const Register = () => {
     }));
   };
 
-  const [errorMessage, setErrorMessage] = useState("");   
+  const [errorMessage, setErrorMessage] = useState("");  
+  
+  const dispatch = useDispatch();
 
-  const registerMe = async () => {
-    try {
-      const response = await register(credentials);
 
+  const registerMe = () => {
+    
+      console.log(credentials)
+      registerUser(credentials)
+      .then((response)=>{
+        console.log(response)
       if (response.status === 201) {
-       navigate("/")
+        dispatch(
+          login({
+            token: response.data.token,
+            name: credentials.name,
+            role: credentials.role_ID,
+            id: response.data.data.id,
+          }))
+       navigate("/Profile")
       } else {
-        setErrorMessage("Hubo un error en el registro. Inténtalo de nuevo más tarde.");
+        setErrorMessage(response.data.message);
       }
-    } catch (error) {
-      setErrorMessage("Hubo un problema en el servidor. Inténtalo de nuevo más tarde.");
-    }
+      })
+     
+      
+    
   };
 
 
