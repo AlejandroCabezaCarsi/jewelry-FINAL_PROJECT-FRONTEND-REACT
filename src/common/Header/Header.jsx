@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -8,6 +8,7 @@ import { ChangeViewButton } from "../ChangeViewButton/ChangeViewButton";
 import { useSelector } from "react-redux";
 import { userData } from "../../pages/Login/userSlice";
 import { useNavigate } from "react-router-dom";
+import { cartInfo } from "../../pages/AllProducts/cartSlice";
 
 export const Header = () => {
   const dataUser = useSelector(userData);
@@ -46,9 +47,14 @@ export const Header = () => {
                   ></div>
                 </div>
               ) : (
-                <div className="navLinksRight">
+                <div className="navLinksRight align-items-center">
                   <div className="PRUEBA p-3">
                     <ChangeViewButton name={"Login"} path={"/Login"} />
+                  </div>
+                  <div
+                    className="cartButton p-3  ms-3"
+                    onClick={() => navigate("/Cart")}
+                  >
                   </div>
                 </div>
               )}

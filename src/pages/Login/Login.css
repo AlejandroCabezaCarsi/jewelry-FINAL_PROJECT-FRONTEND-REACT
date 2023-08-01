@@ -49,13 +49,16 @@
   font-size: medium;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 992px) {
   .loginPhoto {
     background-image: url(../../assets/jewelryLogo.png);
     background-size: contain;
     background-repeat: no-repeat;
     height: 0em;
     width: 0em;
+  }
+  .spaceLogin {
+    border-right: solid black 0em;
   }
 }
 

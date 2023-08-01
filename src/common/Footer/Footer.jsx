@@ -4,7 +4,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 export const Footer = () => {
   return (
-    <div className="footerDesign">
+    <div className="footerDesign d-flex align-items-center">
       <Container>
         <Row>
           <Col className="d-flex justify-content-center">

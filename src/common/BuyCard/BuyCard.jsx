@@ -12,7 +12,7 @@ export const BuyCard = ({ date, status, products, pictures, price }) => {
     <div className="buyCardDesign">
       <Container>
         <Row className="d-flex flex-row justify-content-around">
-          <Col xs={12} sm={5} md={5} lg={5} className="d-flex flex-column">
+          <Col xs={12} sm={12} md={5} lg={5} className="d-flex flex-column ">
             <div className="buyDate">
               Fecha: <p className=" ms-1 m-0 p-0 textBold textSize ">{date}</p>
             </div>
@@ -23,7 +23,7 @@ export const BuyCard = ({ date, status, products, pictures, price }) => {
               </p>
             </div>
           </Col>
-          <Col xs={12} sm={4} md={4} lg={4}>
+          <Col xs={12} sm={12} md={4} lg={4} className="d-flex align-items-center">
             <div className="statusBuy">
               Estado del pedido:{" "}
               <p className=" ms-1 m-0 p-0 textBold textSize ">{status}</p>

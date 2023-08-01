@@ -67,7 +67,7 @@ export const Profile = () => {
 
                         ? orders.map((order) =>(
 
-                            <Col key={order.id} xs={12} sm={6} md={6} lg={10}>
+                            <Col key={order.id} xs={12} sm={10} md={10} lg={10}>
                                 <BuyCard 
                                 order={order} 
                                 date={order.date} 
