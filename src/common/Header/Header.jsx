@@ -17,6 +17,22 @@ export const Header = () => {
 
   const navigate = useNavigate();
 
+  const cart = useSelector(cartInfo)
+
+  
+  const getTotalProductQuantity = () => {
+    let totalQuantity = 0;
+
+    cart.forEach((item) => {
+      totalQuantity += item.quantity;
+    });
+  
+    return totalQuantity;
+  };
+
+  const totalProductQuantity = getTotalProductQuantity();
+
+
   return (
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -44,17 +60,27 @@ export const Header = () => {
                   <div
                     className="cartButton p-3  ms-3"
                     onClick={() => navigate("/Cart")}
-                  ></div>
+                  >
+                    {totalProductQuantity === 0 
+                    ? null
+                    : <div className="cartLength textBold d-flex justify-content-center align-items-center">{totalProductQuantity}</div>
+                    }
+
+                  </div>
                 </div>
               ) : (
                 <div className="navLinksRight align-items-center">
-                  <div className="PRUEBA p-3">
+                  <div className="PRUEBA p-3 pointer">
                     <ChangeViewButton name={"Login"} path={"/Login"} />
                   </div>
                   <div
                     className="cartButton p-3  ms-3"
                     onClick={() => navigate("/Cart")}
                   >
+                    {totalProductQuantity === 0 
+                    ? null
+                    : <div className="cartLength textBold d-flex justify-content-center align-items-center">{totalProductQuantity}</div>
+                    }
                   </div>
                 </div>
               )}

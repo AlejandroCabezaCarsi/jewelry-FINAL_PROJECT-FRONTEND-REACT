@@ -37,3 +37,11 @@
     background-color: black;
     border-radius: 50%;
 }
+
+.cartLength{
+    width: 1.2em;
+    height: 1.2em;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+}

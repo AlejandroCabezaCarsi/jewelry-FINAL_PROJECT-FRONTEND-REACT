@@ -49,7 +49,7 @@ export const Cart = () => {
                         xs={10}
                         sm={12}
                         md={7}
-                        lg={product.length > 2 ? 4 : 7}
+                        lg={12}
                       >
                         <CartProductCard
                           id={product.id}
