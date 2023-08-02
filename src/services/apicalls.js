@@ -26,7 +26,7 @@ export const registerUser = async (userData) => {
 
   console.log(userData)
 
-  return await axios.post(`https://vercel.com/alejandrocabezacarsi/jewelry-final-project2-2cx7/9toHoPChB5dDycdCLwCHAVQSidXp/api/api/register`, userData)
+  return await axios.post(`https://jewelry-final-project2-2cx7.vercel.app/api/api/register`, userData)
 
 }
 
