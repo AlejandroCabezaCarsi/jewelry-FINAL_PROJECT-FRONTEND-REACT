@@ -247,7 +247,7 @@ export const updateOrder = async (token, statusOrder_ID, id) => {
     "statusOrder_ID":statusOrder_ID
   }
 
-  return await axios.post(`http://localhost:8000/api/updateOrder`,data, config)
+  return await axios.post(`${root}updateOrder`,data, config)
 
 }
 
