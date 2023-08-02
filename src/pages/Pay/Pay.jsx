@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Pay.css"; 
 import { Col, Container, Row } from "react-bootstrap";
 import { InputText } from "../../common/InputText/InputText";
@@ -39,6 +39,16 @@ export const Pay = () => {
     const dataUser = useSelector(userData)
 
     const token = dataUser.credentials.token
+
+    console.log(token)
+
+    useEffect(()=>{
+        if (token === ""){
+            navigate("/Login")
+        }
+
+    })
+
 
     const products = useSelector(cartInfo) 
 

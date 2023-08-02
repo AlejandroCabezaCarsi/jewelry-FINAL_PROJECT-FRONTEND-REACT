@@ -12,7 +12,7 @@ import {
   getAllUsersFiltered,
 } from "../../services/apicalls";
 import { UserCard } from "../../common/UserCard/UserCard";
-import { Switch } from "@mui/material";
+import Spinner from 'react-bootstrap/Spinner';
 
 export const AllUsers = () => {
   const navigate = useNavigate();
@@ -105,7 +105,7 @@ export const AllUsers = () => {
     <div className="allUsersDesign">
       <Container fluid>
         <Row className="d-flex justify-content-between">
-          <Col xs={2} sm={2} md={2} lg={2}>
+          <Col xs={3} sm={2} md={2} lg={2}>
             <div className="lateralNavbar ">
               <Container fluid>
                 <Row>
@@ -116,18 +116,18 @@ export const AllUsers = () => {
               </Container>
             </div>
           </Col>
-          <Col xs={10} sm={10} md={9} lg={9}>
+          <Col xs={9} sm={9} md={9} lg={9}>
             <div className="allUsersContent">
               <Container>
                 <div className="filterNavbar">
-                  <Container>
+                  <Container className="d-flex justify-content-center">
                     <Row className="d-flex align-items-center justify-content-center">
                       <Col
-                        xs={10}
-                        sm={2}
-                        md={2}
+                        xs={12}
+                        sm={7}
+                        md={7}
                         lg={4}
-                        className="d-flex justify-content-center mb-3"
+                        className="d-flex justify-content-center align-items-center m-1"
                       >
                         <select
                           value={roleSelected}
@@ -145,10 +145,10 @@ export const AllUsers = () => {
                       </Col>
                       <Col
                         xs={10}
-                        sm={2}
-                        md={2}
+                        sm={7}
+                        md={7}
                         lg={4}
-                        className="d-flex justify-content-center mb-3"
+                        className="d-flex justify-content-center m-1"
                       >
                         <input
                           type="text"
@@ -157,11 +157,11 @@ export const AllUsers = () => {
                         />
                       </Col>
                       <Col
-                        xs={10}
-                        sm={2}
-                        md={2}
-                        lg={4}
-                        className="d-flex justify-content-center"
+                        xs={12}
+                        sm={7}
+                        md={7}
+                        lg={3}
+                        className="d-flex justify-content-center m-1"
                       >
                         <input
                           type="checkbox"
@@ -193,7 +193,9 @@ export const AllUsers = () => {
                     ))
                   ) : (
                     <Col xs={12} sm={12} md={12} lg={12}>
-                      <div className="emptyOrders">CARGANDO USUARIOS</div>
+                      <Spinner animation="border" role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                                </Spinner>
                     </Col>
                   )}
                 </Row>

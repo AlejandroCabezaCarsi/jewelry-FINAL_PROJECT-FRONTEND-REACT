@@ -66,12 +66,18 @@ export const Register = () => {
             role: credentials.role_ID,
             id: response.data.data.id,
           }))
-       navigate("/Profile")
-      } else {
-        setErrorMessage(response.data.message);
-      }
+          
+          
+          navigate("/Profile")
+        } else {
+          setErrorMessage(response.data.message);
+        }
       })
-     
+      
+      .catch((error)=>
+      setErrorMessage(error.response.data.email)
+      )
+      
       
     
   };
@@ -270,7 +276,7 @@ export const Register = () => {
               Todos los campos deben estar rellenados correctamente.
             </div>
           ) : null}
-          {errorMessage && <div className="errorText">{errorMessage}</div>}
+          {errorMessage !== "" ?<div className="errorText">{errorMessage}</div> : null}
                 
                 </Col>
                 

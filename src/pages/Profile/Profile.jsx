@@ -7,6 +7,8 @@ import { userData } from "../Login/userSlice";
 import { Col, Container, Row } from "react-bootstrap";
 import { BuyCard } from "../../common/BuyCard/BuyCard";
 import { getAllOrdersByUserID } from "../../services/apicalls";
+import Spinner from 'react-bootstrap/Spinner';
+
 
 export const Profile = () => {
 
@@ -31,18 +33,28 @@ export const Profile = () => {
 
     const [orders, setOrders] = useState([])
 
+    const [showSpinner, setShowSpinner] = useState(true);
 
     useEffect(()=>{
         if (orders.length === 0){
             getAllOrdersByUserID(token,userID)
                 .then((results) => {
                     setOrders(results.data.data)
-                    
+                    setShowSpinner(false)                    
                 })
-                .catch((error) => console.log(error));
+                .catch((error) => console.log(error))
+                setShowSpinner(false);
         }
 
     },[orders,token])
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowSpinner(false)
+        }, 2000);
+    
+            return () => clearTimeout(timer)
+        }, []);
 
     return(
         <div className="profileDesign">
@@ -60,7 +72,7 @@ export const Profile = () => {
         <div className="profileContent">
 
             <Container>
-                <Row className="d-flex flex-row justify-content-around ">
+                <Row className="d-flex flex-row justify-content-center aling-items-center ">
                     
 
                     {orders.length > 0
@@ -79,14 +91,29 @@ export const Profile = () => {
                                 />
                             </Col>
                         ))
-                        : (
-                            <Col xs={12} sm={12} md={12} lg={12}>                    
-                                <div className="emptyOrders">NO TIENES NINGUNA COMPRA</div>
+                        : showSpinner ? (
+                            <Col
+                              xs={12}
+                              sm={12}
+                              md={12}
+                              lg={12}
+                              className="d-flex flex-row justify-content-center align-items-center"
+                            >
+                              <Spinner animation="border" role="status">
+                                <span className="visually-hidden">Loading...</span>
+                              </Spinner>
                             </Col>
-
-                            
-                        )
-                    }
+                          ) : (
+                            <Col
+                              xs={12}
+                              sm={12}
+                              md={12}
+                              lg={12}
+                              className="d-flex flex-row justify-content-center align-items-center"
+                            >
+                              <div>No tienes ningún pedido.</div>
+                            </Col>
+                          )}
                 </Row>
 
             </Container>

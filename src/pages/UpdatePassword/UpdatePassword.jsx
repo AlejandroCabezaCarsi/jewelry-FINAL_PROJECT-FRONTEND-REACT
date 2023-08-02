@@ -96,20 +96,31 @@ export const UpdatePassword = () => {
         }, 3000);
       } else {
         setErrorMessage(
-          "Hubo un error en la actualización de la contraseña. Inténtalo de nuevo más tarde."
+          response.data.message
         );
       }
     } catch (error) {
       console.log(error);
       setErrorMessage(
-        "Hubo un problema en el servidor. Inténtalo de nuevo más tarde."
+        error.response.data.message
       );
     }
   };
 
   return (
     <div className="updatePasswordDesign d-flex flex-column">
-            <div className="backProfile" onClick={()=>navigate("/Profile")}>Volver a mi perfil</div>
+      <Container>
+        <Row>
+          <Col sm={1}
+              md={1}
+              lg={1}
+              className=" d-flex justify-content-between text-center" >
+          <div className="backProfile" onClick={()=>navigate("/Profile")}></div>
+          <p className="pointer" onClick={()=>navigate("/Profile")}>PERFIL</p>
+          
+          </Col>
+        </Row>
+      </Container>
       <Container className="d-flex justify-content-center align-items-center">
         <div className="updatePasswordForm">
           <Row>

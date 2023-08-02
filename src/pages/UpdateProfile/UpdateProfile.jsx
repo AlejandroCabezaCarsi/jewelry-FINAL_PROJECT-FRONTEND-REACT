@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./UpdateProfile.css";
 import { Col, Container, Row } from "react-bootstrap";
 import { InputText } from "../../common/InputText/InputText";
-import { updateUser } from "../../services/apicalls";
+import { getUserInfoByToken, updateUser } from "../../services/apicalls";
 import { checkError } from "../../services/useful";
 import { useSelector } from "react-redux";
 import { userData } from "../Login/userSlice";
@@ -108,11 +108,39 @@ export const UpdateProfile = () => {
     }
   };
 
+   const [userDataBackend, setUserDataBackend] = useState("")
+
+   useEffect(()=>{
+
+    if(userDataBackend === ""){
+      getUserInfoByToken(token)
+        .then((response)=>{
+          setUserDataBackend(response.data.data)
+        })
+    }
+
+   }, [userDataBackend])
+
   return (
     <div className="updateProfileDesign d-flex flex-column">
-      <div className="backProfile" onClick={()=>navigate("/Profile")}>Volver a mi perfil</div>
+      <Container>
+        <Row>
+          <Col sm={1}
+              md={1}
+              lg={1}
+              className=" d-flex justify-content-between text-center" >
+          <div className="backProfile" onClick={()=>navigate("/Profile")}></div>
+          <p className="pointer" onClick={()=>navigate("/Profile")}>PERFIL</p>
+          
+          </Col>
+        </Row>
+      </Container>
       
       <Container className="d-flex flex-column align-items-center borderUpdate">
+
+        <Row>
+
+        </Row>
         
         <div className="updateForm p-4">
           <Row>
@@ -138,7 +166,7 @@ export const UpdateProfile = () => {
               <InputText
                 type={"text"}
                 design={"normalInput"}
-                placeholder={"Nombre..."}
+                placeholder={userDataBackend.name}
                 name={"name"}
                 functionHandler={inputHandler}
                 onBlurFunction={inputCheck}
@@ -155,7 +183,7 @@ export const UpdateProfile = () => {
               <InputText
                 type={"text"}
                 design={"normalInput"}
-                placeholder={"Apellido..."}
+                placeholder={userDataBackend.surname}
                 name={"surname"}
               />
             </Col>
@@ -176,7 +204,7 @@ export const UpdateProfile = () => {
                     ? "normalInput"
                     : "normalInput errorInput"
                 }
-                placeholder={"  Email..."}
+                placeholder={userDataBackend.email}
                 name={"email"}
                 functionHandler={inputHandler}
                 onBlurFunction={inputCheck}
@@ -193,7 +221,7 @@ export const UpdateProfile = () => {
               <InputText
                 type={"text"}
                 design={"normalInput"}
-                placeholder={"Ciudad..."}
+                placeholder={userDataBackend.city}
                 name={"city"}
               />
             </Col>
@@ -210,7 +238,7 @@ export const UpdateProfile = () => {
               <InputText
                 type={"text"}
                 design={"normalInput"}
-                placeholder={"Código postal..."}
+                placeholder={userDataBackend.postalCode}
                 name={"postalCode"}
               />
             </Col>
@@ -225,7 +253,7 @@ export const UpdateProfile = () => {
               <InputText
                 type={"text"}
                 design={"normalInput"}
-                placeholder={"Direccion..."}
+                placeholder={userDataBackend.address}
                 name={"address"}
               />
             </Col>

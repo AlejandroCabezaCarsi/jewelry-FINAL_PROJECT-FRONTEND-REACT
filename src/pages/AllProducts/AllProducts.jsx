@@ -7,6 +7,8 @@ import {
   getAllProductsFiltered,
   getAllTypes,
 } from "../../services/apicalls";
+import Spinner from 'react-bootstrap/Spinner';
+
 
 export const AllProducts = () => {
   const [products, setProducts] = useState([]);
@@ -133,7 +135,9 @@ export const AllProducts = () => {
                   />
                 </Col>
               ))
-            : null}
+            : <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+        </Spinner>}
         </Row>
       </Container>
     </div>

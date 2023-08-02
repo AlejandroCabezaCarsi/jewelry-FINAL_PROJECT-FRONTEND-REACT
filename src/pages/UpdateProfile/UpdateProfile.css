@@ -34,7 +34,15 @@
 }
 .backProfile{
     cursor: pointer;
-    color: blue;
+    background-image: url("../../assets/backArrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 2em;
+    height: 2em;
+}
+
+.pointer{
+    cursor: pointer;
 }
 
 @keyframes shake {
