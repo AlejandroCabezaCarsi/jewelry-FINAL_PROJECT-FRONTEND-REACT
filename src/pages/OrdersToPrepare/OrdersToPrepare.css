@@ -1,0 +1,8 @@
+.ordersToPrepareDesign{
+    min-height: 75.4vh;
+    max-width: 100vw;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}

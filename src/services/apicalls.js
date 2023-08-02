@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const root = "https://jewelry-final-project-1aposngto-alejandrocabezacarsi.vercel.app/api/api/";
+const root = "https://jewelry-final-project2-2cx7.vercel.app/api/api/";
 
 
 
@@ -26,7 +26,7 @@ export const registerUser = async (userData) => {
 
   console.log(userData)
 
-  return await axios.post(`https://jewelry-final-project-1aposngto-alejandrocabezacarsi.vercel.app/api/api/register`, userData)
+  return await axios.post(`https://vercel.com/alejandrocabezacarsi/jewelry-final-project2-2cx7/9toHoPChB5dDycdCLwCHAVQSidXp/api/api/register`, userData)
 
 }
 
@@ -208,6 +208,51 @@ export const getAllProductsFiltered = async (typeSelected, name, diamonds ) => {
   return await axios.post(`${root}getAllProductsFiltered`, data)
 
 }
+export const getAllOrders= async (statusOrderSelected, token ) => {
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const data ={
+    statusOrderSelected
+  }
+
+  return await axios.post(`${root}getAllOrders`,data, config)
+
+}
+export const getAllStatusOrders = async (token) => {
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  return await axios.get(`${root}getAllStatusOrders`, config)
+
+}
+export const updateOrder = async (token, statusOrder_ID, id) => {
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const data ={
+    "id":id,
+    "statusOrder_ID":statusOrder_ID
+  }
+
+  return await axios.post(`http://localhost:8000/api/updateOrder`,data, config)
+
+}
+
+
+
 
 
 

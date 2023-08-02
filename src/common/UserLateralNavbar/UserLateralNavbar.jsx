@@ -47,7 +47,12 @@ export const UserLateralNavbar = () => {
                 >
                   <ChangeViewButtonUserLateralNavbar
                     path={"/Profile"}
-                    name={"Ver pedidos"}
+                    name={"Ver mis pedidos"}
+                  />
+                  <div className="space"></div>
+                  <ChangeViewButtonUserLateralNavbar
+                    path={"/OrdersToPrepare"}
+                    name={"Ver todos los  pedidos"}
                   />
                   <div className="space"></div>
                   <ChangeViewButtonUserLateralNavbar
@@ -94,7 +99,12 @@ export const UserLateralNavbar = () => {
                 >
                   <ChangeViewButtonUserLateralNavbar
                     path={"/Profile"}
-                    name={"Ver pedidos"}
+                    name={"Ver mis pedidos"}
+                  />
+                  <div className="space"></div>
+                  <ChangeViewButtonUserLateralNavbar
+                    path={"/OrdersToPrepare"}
+                    name={"Ver todos los  pedidos"}
                   />
                   <div className="space"></div>
                   <ChangeViewButtonUserLateralNavbar
@@ -141,7 +151,12 @@ export const UserLateralNavbar = () => {
                 >
                   <ChangeViewButtonUserLateralNavbar
                     path={""}
-                    name={"Ver de pedidos"}
+                    name={"Ver mis pedidos"}
+                  />
+                  <div className="space"></div>
+                  <ChangeViewButtonUserLateralNavbar
+                    path={"/OrdersToPrepare"}
+                    name={"Ver todos los  pedidos"}
                   />
                   <div className="space"></div>
                   <ChangeViewButtonUserLateralNavbar

@@ -3,8 +3,8 @@ import "./Pay.css";
 import { Col, Container, Row } from "react-bootstrap";
 import { InputText } from "../../common/InputText/InputText";
 import { checkError } from "../../services/useful";
-import { useSelector } from "react-redux";
-import { cartInfo } from "../AllProducts/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { cartInfo, removeAll } from "../AllProducts/cartSlice";
 import { userData } from "../Login/userSlice";
 import { createOrder } from "../../services/apicalls";
 import { useNavigate } from "react-router-dom";
@@ -52,6 +52,9 @@ export const Pay = () => {
 
     const products = useSelector(cartInfo) 
 
+    const dispatch = useDispatch();
+
+
     const total = products.reduce((accumulator, product) => accumulator + (product.price * product.quantity), 0);
 
     const createOrderFront = () => { 
@@ -60,6 +63,7 @@ export const Pay = () => {
 
         createOrder(token, productIds)
             .then((response)=>{
+                dispatch(removeAll())
                 navigate("/Profile")
             })
 

@@ -1,0 +1,30 @@
+.buyCardPrepareDesign{
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 2em;
+    background-color: #d9dddb;
+}
+
+.buyDate{
+    width: auto;
+    height: auto;
+}
+.statusBuy{
+    width: auto;
+    height: auto;
+
+}
+
+.productFind{
+    background-color: #b4b4b4;
+
+}
+
+.cursorPointer{
+    cursor: pointer;
+}
+
+.buttonSendData{
+    background-color: black;
+    color: white;
+}
