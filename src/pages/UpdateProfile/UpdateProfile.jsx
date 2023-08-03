@@ -185,6 +185,7 @@ export const UpdateProfile = () => {
                 design={"normalInput"}
                 placeholder={userDataBackend.surname}
                 name={"surname"}
+                functionHandler={inputHandler}
               />
             </Col>
           </Row>
@@ -223,6 +224,7 @@ export const UpdateProfile = () => {
                 design={"normalInput"}
                 placeholder={userDataBackend.city}
                 name={"city"}
+                functionHandler={inputHandler}
               />
             </Col>
           </Row>
@@ -240,6 +242,7 @@ export const UpdateProfile = () => {
                 design={"normalInput"}
                 placeholder={userDataBackend.postalCode}
                 name={"postalCode"}
+                functionHandler={inputHandler}
               />
             </Col>
             <Col
@@ -255,6 +258,7 @@ export const UpdateProfile = () => {
                 design={"normalInput"}
                 placeholder={userDataBackend.address}
                 name={"address"}
+                functionHandler={inputHandler}
               />
             </Col>
           </Row>
