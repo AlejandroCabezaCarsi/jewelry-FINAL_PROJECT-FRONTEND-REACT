@@ -40,7 +40,7 @@ export const Cart = () => {
           </Row>
 
           <Row className="m-2 d-flex align-items-center  mb-5">
-            <Col className="d-flex flex-column align-items-center">
+            <Col  className="d-flex flex-column ">
               <Row className="d-flex justify-content-center align-items-center">
                 {products.length > 0
                   ? products.map((product) => (
@@ -48,8 +48,8 @@ export const Cart = () => {
                         key={product.id}
                         xs={10}
                         sm={12}
-                        md={7}
-                        lg={12}
+                        md={12}
+                        lg={products.length > 2 ? 7 : products.length === 1 ? 12 : 7 }
                       >
                         <CartProductCard
                           id={product.id}
