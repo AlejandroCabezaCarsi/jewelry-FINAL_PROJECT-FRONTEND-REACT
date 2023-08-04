@@ -128,7 +128,7 @@ export const UpdateProfile = () => {
           <Col sm={1}
               md={1}
               lg={1}
-              className=" d-flex justify-content-between text-center" >
+              className=" d-flex justify-content-start text-center" >
           <div className="backProfile" onClick={()=>navigate("/Profile")}></div>
           <p className="pointer" onClick={()=>navigate("/Profile")}>PERFIL</p>
           

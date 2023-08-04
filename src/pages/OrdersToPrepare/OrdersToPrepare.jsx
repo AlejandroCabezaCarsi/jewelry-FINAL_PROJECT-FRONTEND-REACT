@@ -70,7 +70,7 @@ export const OrdersToPrepare = () => {
 
     return(
         <div className="ordersToPrepareDesign">
-            <div className="lateralNavbar ">
+            <div className="lateralNavbarOrdersToPrepare ">
             <Container fluid>
                 <Row>
                     <Col sm={2} md={2} lg={2}>                    
@@ -81,7 +81,8 @@ export const OrdersToPrepare = () => {
             
         </div>
 
-        
+        <div className="contentOrdersToPrepare d-flex justify-content-center align-items-center">
+
         <Container>
 
         <Row className="d-flex justify-content-center align-items-center mt-3 filterNavbar p-2">
@@ -143,7 +144,7 @@ export const OrdersToPrepare = () => {
                               </Spinner>
                             </Col>
                           ) : (
-                            <Col
+                              <Col
                               xs={12}
                               sm={12}
                               md={12}
@@ -158,6 +159,7 @@ export const OrdersToPrepare = () => {
                 </Row>
 
             </Container>
+            </div>
         </div>
         
     )

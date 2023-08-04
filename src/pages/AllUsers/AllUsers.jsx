@@ -178,7 +178,7 @@ export const AllUsers = () => {
                 <Row>
                   {users.length > 0 ? (
                     users.map((user) => (
-                      <Col key={user.id} xs={12} sm={6} md={6} lg={4}>
+                      <Col key={user.id} xs={12} sm={6} md={6} lg={4} className="d-flex justify-content-center">
                         <UserCard
                           role={user.role.role}
                           deleted_at={
@@ -192,7 +192,7 @@ export const AllUsers = () => {
                       </Col>
                     ))
                   ) : (
-                    <Col xs={12} sm={12} md={12} lg={12}>
+                    <Col xs={12} sm={12} md={12} lg={12} className="d-flex align-items-center justify-content-center">
                       <Spinner animation="border" role="status">
                                     <span className="visually-hidden">Loading...</span>
                                 </Spinner>

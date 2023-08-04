@@ -71,14 +71,14 @@ export const BuyCardPrepare = ({id,date, statusOrder,products, name, surname, ad
                     {statusOrder === "confirmed"
 
                         ?   <Col xs={12} sm={12} md={12} lg={12} className="d-flex justify-content-center mt-2 mb-2">
-                                <div className="buttonSendData cursorPointer p-2" onClick={()=>setNewStatus(2)}>Cambiar status a enviado</div>
+                                <div className="buttonSendData cursorPointer p-2 text-center" onClick={()=>setNewStatus(2)}>Cambiar status a enviado</div>
                             </Col> 
                         
 
                         :  statusOrder === "delivered"
                                 ? null 
                                 :<Col xs={12} sm={12} md={12} lg={12} className="d-flex justify-content-center mt-2">
-                                <div className="buttonSendData cursorPointer p-2" onClick={()=>setNewStatus(3)}>Cambiar status a entregado</div>
+                                <div className="buttonSendData cursorPointer p-2 text-center" onClick={()=>setNewStatus(3)}>Cambiar status a entregado</div>
                                 </Col> 
                     
             
