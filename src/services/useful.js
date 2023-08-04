@@ -3,15 +3,21 @@ export const checkError = (name, value) => {
       case "email":
       case "e-mail":
       case "correo":
-        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)) {
-          return "El formato de e-mail es incorrecto";
+        if(value !== ""){
+          if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)) {
+            return "El formato de e-mail es incorrecto";
+          }
+
         }
   
         return "";
   
       case "password":
-        if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(value)){
-          return "La contraseña debe contener al menos una mayúscula, una minúscula, un número y tener al menos 8 caracteres.";
+        
+        if (value !== ""){
+          if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(value)){
+            return "La contraseña debe contener al menos una mayúscula, una minúscula, un número y tener al menos 8 caracteres.";
+        }
 
         }
 
@@ -20,8 +26,7 @@ export const checkError = (name, value) => {
       case "newPassword":
         if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(value)){
           return "La contraseña debe contener al menos una mayúscula, una minúscula, un número y tener al menos 8 caracteres.";
-
-        }
+      }
       
         return "";
       case "oldPassword":
@@ -47,7 +52,7 @@ export const checkError = (name, value) => {
         return "";
   
       default:
-        console.log("Unknown format");
+        return ""
     }
   };
   
