@@ -1,0 +1,21 @@
+.deleteAccountDesign{
+    max-width: 100vw;
+    min-height: 75vh;
+}
+
+.returnButton{
+    width: 6em;
+    height: 2em;
+    background-color: green;
+    
+}
+.cancelAccount{
+    width: 6em;
+    height: 2em;
+    background-color: red;
+}
+
+.deleteAccountForm {
+    width: auto;
+    height: auto;
+}

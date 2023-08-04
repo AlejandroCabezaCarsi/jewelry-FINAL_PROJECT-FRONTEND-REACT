@@ -15,6 +15,7 @@ import { AllProducts } from "../AllProducts/AllProducts";
 import { Cart } from "../Cart/Cart";
 import { Pay } from "../Pay/Pay";
 import { OrdersToPrepare } from "../OrdersToPrepare/OrdersToPrepare";
+import { DeleteAccount } from "../DeleteAccount/DeleteAcount";
 
 
 export const Body = () => {
@@ -37,6 +38,7 @@ export const Body = () => {
                 <Route path="/Cart" element={<Cart/>}/>
                 <Route path="/Pay" element={<Pay/>}/>
                 <Route path="/OrdersToPrepare" element={<OrdersToPrepare/>}/>
+                <Route path="/DeleteAccount" element={<DeleteAccount/>}/>
 
             </Routes>
         </>

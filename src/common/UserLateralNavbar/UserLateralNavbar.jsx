@@ -210,6 +210,11 @@ export const UserLateralNavbar = () => {
                     name={"Editar mi contraseña"}
                   />
                   <div className="space"></div>
+                  <ChangeViewButtonUserLateralNavbar
+                    path={"/DeleteAccount"}
+                    name={"Cancelar mi cuenta"}
+                  />
+                  <div className="space"></div>
                   <div
                     className="logout"
                     onClick={() => {

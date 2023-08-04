@@ -252,6 +252,19 @@ export const updateOrder = async (token, statusOrder_ID, id) => {
 }
 
 
+export const cancelAccount = async (token) => {
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  return await axios.delete(`${root}delete`, config)
+
+}
+
+
 
 
 

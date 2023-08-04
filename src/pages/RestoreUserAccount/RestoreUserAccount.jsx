@@ -85,7 +85,10 @@ export const RestoreUserAccount = () => {
                                 {userDataBackend.length > 0
 
                                     ? userDataBackend.map((user)=>(
-                                        <div className="nameAndSurnameRestoreUserAccount mt-4 fontWeight">{user.name}{user.surname}</div>
+                                        <div className="d-flex flex-column align-items-center justify-content-center">
+                                            <div className="nameAndSurnameRestoreUserAccount mt-4 fontWeight">{user.name}</div>
+                                            <div className="nameAndSurnameRestoreUserAccount mt-1 fontWeight">{user.surname}</div>
+                                        </div>
                                     ))
                                     : null
                                 }
@@ -102,7 +105,7 @@ export const RestoreUserAccount = () => {
                                         <div className="sureButton p-2" onClick={()=>setSure("Sure")}>Activar</div>
                                     </Col>
                                     <Col  xs={6} sm={6} md={6} lg={6} className="text-center mt-4 mb-4">
-                                        <div className="returnButton p-2"  onClick={()=>navigate(`/UserDetail/${id}`)}>Volver</div>
+                                        <div className="returnButtonRestore p-2"  onClick={()=>navigate(`/UserDetail/${id}`)}>Volver</div>
                                     </Col>
                                 </>
                             :   <>
@@ -113,7 +116,7 @@ export const RestoreUserAccount = () => {
                                         <div className="sureButton p-2" onClick={()=>restoreUserFunction(id,token)}>Activar</div>
                                     </Col>
                                     <Col  xs={6} sm={6} md={6} lg={6} className="text-center mt-4 mb-4">
-                                        <div className="returnButton p-2" onClick={()=>navigate(`/UserDetail/${id}`)}>Volver</div>
+                                        <div className="returnButtonRestore p-2" onClick={()=>navigate(`/UserDetail/${id}`)}>Volver</div>
                                     </Col>
                                 </>
                         
