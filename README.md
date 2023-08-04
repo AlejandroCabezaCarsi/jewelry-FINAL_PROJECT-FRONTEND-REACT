@@ -20,7 +20,7 @@ He creado un e-commerce de una joyería. Dentro del frontend encontraremos todas
 
 La app creada la tengo actualmente en deploy: 
 
-    https://jewelry-final-project-frontend-react.vercel.app/
+    https://jewelry-final-project-frontend-react2-eklw.vercel.app/
 
 Algunas vistas de la app: 
 
