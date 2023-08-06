@@ -35,14 +35,17 @@ export const Profile = () => {
 
     const [showSpinner, setShowSpinner] = useState(true);
 
+    const [ordersFetched, setOrdersFetched] = useState(false)
+
     useEffect(()=>{
-        if (orders.length === 0){
+        if (orders.length === 0  && !ordersFetched){
             getAllOrdersByUserID(token,userID)
                 .then((results) => {
                     setOrders(results.data.data)
                     setShowSpinner(false)                    
                 })
                 .catch((error) => console.log(error))
+                setOrdersFetched(true);
                 setShowSpinner(false);
         }
 

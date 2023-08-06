@@ -262,7 +262,7 @@ export const Register = () => {
               >
               
               <div
-                onClick={credentialsError.emailError || credentialsError.passwordError ? null : registerMe}
+                onClick={credentialsError.emailError || credentialsError.passwordError || Object.values(credentials).some((value) => value === "") ? null : registerMe}
                 className={`registerButton ${credentialsError.emailError || credentialsError.passwordError || Object.values(credentials).some((value) => value === "") ? 'inactiveButton' : ''}`}
               >
                 Registate
