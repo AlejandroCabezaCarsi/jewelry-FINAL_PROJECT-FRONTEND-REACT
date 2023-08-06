@@ -6,8 +6,6 @@ const root = "https://jewelry-final-project2-2cx7.vercel.app/api/api/";
 
 export const loginMe = async (credentials) => {
 
-  console.log(credentials)
-
   return await axios.post(`${root}login`, credentials);
   
 };
@@ -24,7 +22,6 @@ export const getUserInfoByToken = async (token) => {
 
 export const registerUser = async (userData) => {
 
-  console.log(userData)
 
   return await axios.post(`https://jewelry-final-project2-2cx7.vercel.app/api/api/register`, userData)
 

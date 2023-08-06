@@ -11,7 +11,6 @@ export const BuyCardPrepare = ({id,date, statusOrder,products, name, surname, ad
 
     const token = dataUser.credentials.token
 
-    console.log(token)
 
     const [newStatus, setNewStatus] = useState("")
 

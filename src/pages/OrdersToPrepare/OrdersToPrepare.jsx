@@ -45,7 +45,6 @@ export const OrdersToPrepare = () => {
         if (orders.length === 0 || statusOrderSelected !== ""){
             getAllOrders(statusOrderSelected, token )
                 .then((results) => {
-                    console.log(results.data.data)
                     setOrders(results.data.data)
                     setShowSpinner(false)                    
                 })
@@ -107,7 +106,6 @@ export const OrdersToPrepare = () => {
           </Row>
                 <Row className="d-flex flex-row justify-content-center aling-items-center ">
                     
-                    {console.log(orders)}
                     {orders.length > 0
 
                     

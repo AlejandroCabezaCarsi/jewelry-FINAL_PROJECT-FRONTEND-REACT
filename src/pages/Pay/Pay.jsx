@@ -40,8 +40,6 @@ export const Pay = () => {
 
     const token = dataUser.credentials.token
 
-    console.log(token)
-
     useEffect(()=>{
         if (token === ""){
             navigate("/Login")

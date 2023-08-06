@@ -22,8 +22,6 @@ export const Register = () => {
         address:"",
         role_ID: 4, 
         isActive: true
-       
-
       });
     
       const [credentialsError, setCredentialsError] = useState({
@@ -54,10 +52,8 @@ export const Register = () => {
 
   const registerMe = () => {
     
-      console.log(credentials)
       registerUser(credentials)
       .then((response)=>{
-        console.log(response)
       if (response.status === 201) {
         dispatch(
           login({
@@ -189,7 +185,7 @@ export const Register = () => {
                           onBlurFunction={inputCheck}
                         
                 />
-                <div className="errorText">{credentialsError.passwordError}</div>
+                <div className="errorText text-center">{credentialsError.passwordError}</div>
                 </Col>
             </Row>
 
@@ -267,7 +263,7 @@ export const Register = () => {
               
               <div
                 onClick={credentialsError.emailError || credentialsError.passwordError ? null : registerMe}
-                className={`registerButton ${credentialsError.emailError || credentialsError.passwordError ? 'inactiveButton' : ''}`}
+                className={`registerButton ${credentialsError.emailError || credentialsError.passwordError || Object.values(credentials).some((value) => value === "") ? 'inactiveButton' : ''}`}
               >
                 Registate
               </div>
